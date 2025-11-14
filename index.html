@@ -121,21 +121,25 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 450px;
+            height: 500px;
             background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
                         url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI0NTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iNDUwIiBmaWxsPSIjMTE1MjkzIi8+PC9zdmc+');
-            background-size: cover;
+            background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
+            background-color: #1a1a1a;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
+            transition: background-image 0.5s ease-in-out;
         }
 
         .hero-content {
             max-width: 900px;
             padding: 0 20px;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -367,15 +371,21 @@
             }
 
             .hero {
-                height: 350px;
+                height: 400px;
             }
 
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                line-height: 1.3;
             }
 
             .hero p {
                 font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .hero-content {
+                padding: 0 1.5rem;
             }
 
             .section {
@@ -463,11 +473,23 @@
                 padding: 0.3rem 0.6rem;
             }
 
+            .hero {
+                height: 350px;
+            }
+
             .hero h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+                line-height: 1.3;
             }
 
             .hero p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                margin-bottom: 1.5rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.3rem;
                 font-size: 0.9rem;
             }
 
@@ -545,23 +567,50 @@
     </div>
 
     <script>
-        // Simple carousel functionality
+        // Carousel functionality with different images for mobile
         const carousel = document.getElementById('carousel');
-        const images = [
+        
+        // Desktop images (landscape/wide)
+        const desktopImages = [
             'images/carrousel-1.jpg',
             'images/carrousel-2.jpg',
             'images/carrousel-3.jpg',
             'images/carrousel-4.jpg'
         ];
+        
+        // Mobile images (portrait/vertical or mobile-optimized)
+        const mobileImages = [
+            'images/carrousel-mobile-1.jpg',
+            'images/carrousel-mobile-2.jpg',
+            'images/carrousel-mobile-3.jpg',
+            'images/carrousel-mobile-4.png'
+        ];
+        
         let currentImage = 0;
+        let images = desktopImages;
+        
+        // Detect screen size and select appropriate images
+        function updateImagesForScreenSize() {
+            if (window.innerWidth <= 768) {
+                images = mobileImages;
+            } else {
+                images = desktopImages;
+            }
+            // Reset to first image when switching
+            currentImage = 0;
+            carousel.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('${images[currentImage]}')`;
+        }
 
         function changeBackground() {
             currentImage = (currentImage + 1) % images.length;
             carousel.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('${images[currentImage]}')`;
         }
 
-        // Set initial image
-        carousel.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('${images[0]}')`;
+        // Set initial image based on screen size
+        updateImagesForScreenSize();
+        
+        // Update images when window is resized
+        window.addEventListener('resize', updateImagesForScreenSize);
         
         // Change image every 4 seconds
         setInterval(changeBackground, 4000);
