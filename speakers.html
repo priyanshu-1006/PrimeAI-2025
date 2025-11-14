@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers - PRIMEAI-2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Scrolling Notice Bar */
+        .notice-bar {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 0.8rem 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .notice-content {
+            display: flex;
+            animation: scroll-left 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .notice-content span {
+            padding-right: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        nav {
+            background: #ffffff;
+        }
+
+        nav .logo-container {
+            background: #ffffff;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #000000;
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        nav .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        nav .nav-links {
+            background: #ffffff;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .nav-links .container {
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background: rgba(245, 124, 0, 0.1);
+            color: #f57c00;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f57c00;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .speaker-photo {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 4px solid #f57c00;
+        }
+
+        .speaker-content {
+            padding: 2rem;
+        }
+
+        .speaker-content h3 {
+            font-size: 1.5rem;
+            color: #000000;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .speaker-role {
+            color: #f57c00;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .speaker-org {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #f57c00;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .tag.orange {
+            background: #ff6f00;
+        }
+
+        .tag.blue {
+            background: #000000;
+        }
+
+        .tag.green {
+            background: #f57c00;
+        }
+
+        footer {
+            background: #000000;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 3px solid #f57c00;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .notice-content span {
+                font-size: 0.85rem;
+                padding-right: 50px;
+            }
+
+            nav .logo-container {
+                padding: 0.8rem 0;
+            }
+
+            nav .logo {
+                font-size: 1.3rem;
+                gap: 0.8rem;
+            }
+
+            nav .logo img {
+                height: 40px;
+            }
+
+            nav .nav-links {
+                padding: 0.5rem 0;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .hero-banner {
+                padding: 3rem 0;
+            }
+
+            .hero-banner h1 { 
+                font-size: 1.8rem; 
+            }
+
+            .hero-banner p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .speakers-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .speaker-card {
+                border-radius: 12px;
+            }
+
+            .speaker-photo {
+                height: 250px;
+            }
+
+            .speaker-content {
+                padding: 1.5rem;
+            }
+
+            .speaker-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .speaker-role {
+                font-size: 0.95rem;
+            }
+
+            .speaker-org {
+                font-size: 0.9rem;
+            }
+
+            .tag {
+                font-size: 0.8rem;
+                padding: 0.25rem 0.7rem;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.1rem;
+            }
+
+            nav .logo img {
+                height: 35px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-banner p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .speaker-photo {
+                height: 200px;
+            }
+
+            .speaker-content {
+                padding: 1.2rem;
+            }
+
+            .speaker-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .tag {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Notice Bar -->
+    <div class="notice-bar">
+        <div class="notice-content">
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <div class="container">
+                <img src="images/mmmut-logo.png" alt="MMMUT Logo" style="height: 60px;" onerror="this.style.display='none'">
+                <a href="index.html" class="logo">PRIMEAI-2025</a>
+                <div style="width: 60px;"></div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <div class="container">
+            <h1>👤 Distinguished Speakers</h1>
+            <p style="font-size: 1.3rem;">Learn from International & Industry Experts in AI and Machine Learning</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Esteemed Faculty</h2>
+            <p class="section-subtitle">Internationally recognized experts from premier institutions and industry leaders</p>
+
+            <div class="speakers-grid">
+                <!-- Speaker 1 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-rakesh-kumar.webp" alt="Prof. Rakesh Kumar" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%231976d2%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22120%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3ERK%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Prof. Rakesh Kumar</h3>
+                        <p class="speaker-role">Professor & Head</p>
+                        <p class="speaker-org">Department of Computer Science & Engineering, MMMUT Gorakhpur</p>
+                        <div class="expertise-tags">
+                            <span class="tag blue">Neural Networks</span>
+                            <span class="tag orange">Interpretability</span>
+                            <span class="tag green">XAI Methods</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-satish-singh.png" alt="Prof. Satish Kumar Singh" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23667eea%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22100%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3ESKS%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Prof. Satish Kumar Singh</h3>
+                        <p class="speaker-role">Professor</p>
+                        <p class="speaker-org">IIIT Allahabad</p>
+                        <div class="expertise-tags">
+                            <span class="tag">ML Foundations</span>
+                            <span class="tag orange">Deep Learning</span>
+                            <span class="tag blue">XAI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-peter-peer.jpg" alt="Prof. Peter Peer" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22120%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3EPP%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Prof. Peter Peer</h3>
+                        <p class="speaker-role">Professor</p>
+                        <p class="speaker-org">University of Ljubljana, Slovenia</p>
+                        <div class="expertise-tags">
+                            <span class="tag green">Computer Vision</span>
+                            <span class="tag">Future Directions</span>
+                            <span class="tag orange">Research Opportunities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 4 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-nagendra-sharma.jpg" alt="Nagendra Sharma" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%234285F4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22120%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3ENS%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Nagendra Sharma</h3>
+                        <p class="speaker-role">Field CTO</p>
+                        <p class="speaker-org">Google Cloud Platform (GCP)</p>
+                        <div class="expertise-tags">
+                            <span class="tag blue">Cloud AI</span>
+                            <span class="tag green">PRIMEAI Applications</span>
+                            <span class="tag">Industry Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 5 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-venkat-desai.jpeg" alt="Venkat Desai" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%2300A4EF%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22120%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3EVD%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Venkat Desai</h3>
+                        <p class="speaker-role">Senior Specialist</p>
+                        <p class="speaker-org">Microsoft Japan</p>
+                        <div class="expertise-tags">
+                            <span class="tag orange">Azure AI</span>
+                            <span class="tag blue">Human-in-the-loop</span>
+                            <span class="tag green">Interactive XAI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 6 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-sandeep-sengar.jpg" alt="Dr. Sandeep Singh Sengar" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%2311998e%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22100%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3ESSS%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Dr. Sandeep Singh Sengar</h3>
+                        <p class="speaker-role">Research Fellow</p>
+                        <p class="speaker-org">Cardiff School of Technologies, UK</p>
+                        <div class="expertise-tags">
+                            <span class="tag">ML Interpretability</span>
+                            <span class="tag orange">Cybersecurity</span>
+                            <span class="tag blue">Applied AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 7 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-shivram-dubey.jpg" alt="Dr. Shivram Dubey" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23764ba2%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22120%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3ESD%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Dr. Shivram Dubey</h3>
+                        <p class="speaker-role">Assistant Professor</p>
+                        <p class="speaker-org">IIIT Allahabad</p>
+                        <div class="expertise-tags">
+                            <span class="tag green">Deep Learning</span>
+                            <span class="tag orange">CNN Architectures</span>
+                            <span class="tag">Neural Interpretability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 8 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-soumendu-chakrabourty.webp" alt="Dr. Soumendu Chakrabourty" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%231976d2%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22100%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3ESC%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Dr. Soumendu Chakrabourty</h3>
+                        <p class="speaker-role">Assistant Professor</p>
+                        <p class="speaker-org">IIIT Lucknow</p>
+                        <div class="expertise-tags">
+                            <span class="tag blue">Feature Engineering</span>
+                            <span class="tag orange">ML Algorithms</span>
+                            <span class="tag green">Data Science</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 9 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-satya-yadav.jpg" alt="Dr. Satya Prakash Yadav" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22100%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3ESPY%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Dr. Satya Prakash Yadav</h3>
+                        <p class="speaker-role">Associate Professor & Programme Convener</p>
+                        <p class="speaker-org">Department of CSE, MMMUT Gorakhpur</p>
+                        <div class="expertise-tags">
+                            <span class="tag">Reinforcement Learning</span>
+                            <span class="tag blue">Reward Modeling</span>
+                            <span class="tag orange">PRIMEAI Framework</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 10 -->
+                <div class="speaker-card">
+                    <img src="images/speaker-nayaneesh-mishra.png" alt="Dr. Nayaneesh Kumar Mishra" class="speaker-photo" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%2311998e%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%22100%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-weight=%22bold%22%3ENM%3C/text%3E%3C/svg%3E'">
+                    <div class="speaker-content">
+                        <h3>Dr. Nayaneesh Kumar Mishra</h3>
+                        <p class="speaker-role">CEO</p>
+                        <p class="speaker-org">N-Code Sutram</p>
+                        <div class="expertise-tags">
+                            <span class="tag green">Feature Attribution</span>
+                            <span class="tag">Gradient Methods</span>
+                            <span class="tag orange">Industry Applications</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FDP PRIMEAI-2025 | Department of Computer Science & Engineering, MMMUT Gorakhpur</p>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="schedule.html">Schedule</a> | 
+                <a href="speakers.html">Speakers</a>
+            </p>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">Web Developer: <strong>Priyanshu Chaurasia</strong></p>
+        </div>
+    </footer>
+</body>
+</html>

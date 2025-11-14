@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDP PRIMEAI-2025 - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Scrolling Notice Bar */
+        .notice-bar {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 0.8rem 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .notice-content {
+            display: flex;
+            animation: scroll-left 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .notice-content span {
+            padding-right: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+        }
+
+        nav .logo-container {
+            background: #ffffff;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #000000;
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        nav .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        nav .nav-links {
+            background: #ffffff;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .nav-links .container {
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background: rgba(245, 124, 0, 0.1);
+            color: #f57c00;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 450px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI0NTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iNDUwIiBmaWxsPSIjMTE1MjkzIi8+PC9zdmc+');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #f57c00;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 24px rgba(245, 124, 0, 0.5);
+        }
+
+        .btn:hover {
+            background: #e65100;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(245, 124, 0, 0.6);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #f57c00;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+        /* Cards */
+        .card {
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .highlight-card {
+            color: white;
+        }
+
+        .highlight-card.orange { background: #f57c00; }
+        .highlight-card.blue { background: #1565c0; }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card .value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0.5rem 0;
+        }
+
+        /* Ranking Section */
+        .ranking-section {
+            background: #f5f5f5;
+            padding: 5rem 0;
+        }
+
+        .ranking-card {
+            background: white;
+            border: 3px solid;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .ranking-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .ranking-card.orange { border-color: #f57c00; }
+        .ranking-card.blue { border-color: #1565c0; }
+
+        .ranking-badge {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .ranking-badge.orange { background: #f57c00; }
+        .ranking-badge.blue { background: #1565c0; }
+
+        .rank-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+
+        .rank-number.orange { color: #f57c00; }
+        .rank-number.blue { color: #1565c0; }
+
+        /* CTA Section */
+        .cta-section {
+            background: #f57c00;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #f57c00;
+            margin: 0.5rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            margin: 0.5rem;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .notice-content span {
+                font-size: 0.85rem;
+                padding-right: 50px;
+            }
+
+            nav .logo-container {
+                padding: 0.8rem 0;
+            }
+
+            nav .logo {
+                font-size: 1.3rem;
+                gap: 0.8rem;
+            }
+
+            nav .logo img {
+                height: 40px;
+            }
+
+            nav .nav-links {
+                padding: 0.5rem 0;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .hero {
+                height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+            }
+
+            .card .value {
+                font-size: 1.5rem;
+            }
+
+            .card-icon svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .ranking-section {
+                padding: 3rem 0;
+            }
+
+            .ranking-card {
+                padding: 1.5rem;
+            }
+
+            .rank-number {
+                font-size: 2rem;
+            }
+
+            .ranking-badge svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.1rem;
+            }
+
+            nav .logo img {
+                height: 35px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .card-icon svg {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            color: #000000;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 3px solid #f57c00;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.75rem; }
+            .hero p { font-size: 1rem; }
+            nav ul { gap: 0.5rem; font-size: 0.9rem; }
+            .section-title { font-size: 1.5rem; }
+            .grid { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Notice Bar -->
+    <div class="notice-bar">
+        <div class="notice-content">
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <div class="container">
+                <img src="images/mmmut-logo.png" alt="MMMUT Logo" style="height: 60px;" onerror="this.style.display='none'">
+                <a href="index.html" class="logo">PRIMEAI-2025</a>
+                <div style="width: 60px;"></div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="carousel">
+        <div class="hero-content">
+            <h1>FDP PRIMEAI-2025</h1>
+            <p>Process-centric and Reward-based Interpretable Models in Explainable AI</p>
+            <a href="#registration" class="btn">Register Now →</a>
+        </div>
+    </div>
+
+    <script>
+        // Simple carousel functionality
+        const carousel = document.getElementById('carousel');
+        const images = [
+            'images/carrousel-1.jpg',
+            'images/carrousel-2.jpg',
+            'images/carrousel-3.jpg',
+            'images/carrousel-4.jpg'
+        ];
+        let currentImage = 0;
+
+        function changeBackground() {
+            currentImage = (currentImage + 1) % images.length;
+            carousel.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('${images[currentImage]}')`;
+        }
+
+        // Set initial image
+        carousel.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('${images[0]}')`;
+        
+        // Change image every 4 seconds
+        setInterval(changeBackground, 4000);
+    </script>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">About FDP PRIMEAI-2025</h2>
+            <p class="section-subtitle">The Process Reward Interpretability Model with Explainable AI (PRIMEAI-2025) is a nine-session faculty development program designed to provide participants with in-depth knowledge of Machine Learning, Deep Learning, and Explainable AI, with a focus on making AI models transparent, accountable, and trustworthy.</p>
+            <p style="text-align: justify; line-height: 1.8;">
+                As AI systems become increasingly complex, traditional black-box models, such as deep neural networks, often lack interpretability, making it difficult for researchers and practitioners to understand decision-making processes, verify outcomes, or ensure alignment with intended objectives. This FDP addresses these challenges by emphasising process-based reward interpretability, combining state-of-the-art ML/DL techniques with explainable AI frameworks.
+            </p>
+        </div>
+    </section>
+
+    <!-- Programme Highlights -->
+    <section class="section" style="background: #fafafa;">
+        <div class="container">
+            <h2 class="section-title">Programme Highlights</h2>
+            <p class="section-subtitle">A comprehensive 8-day programme designed to empower faculty and researchers</p>
+            
+            <div class="grid grid-4">
+                <div class="card highlight-card orange">
+                    <div class="card-icon">📅</div>
+                    <h3>Event Duration</h3>
+                    <div class="value">8 Days</div>
+                    <p>23-30 December 2025</p>
+                </div>
+                
+                <div class="card highlight-card blue">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Expert Speakers</h3>
+                    <div class="value">10+ Speakers</div>
+                    <p>International & Industry Experts</p>
+                </div>
+                
+                <div class="card highlight-card orange">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <h3>Comprehensive</h3>
+                    <div class="value">ML + DL + AI</div>
+                    <p>Hands-on Sessions</p>
+                </div>
+                
+                <div class="card highlight-card blue">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Registration Fee</h3>
+                    <div class="value">₹250 / ₹1000</div>
+                    <p>Online / Offline External</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Leadership -->
+    <section class="section" style="background: #f9f9f9; padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Programme Leadership</h2>
+            <div class="grid grid-3">
+
+                <div class="card" style="text-align: left;">
+                    <img src="images/patron.jpg" alt="Prof. Jay Prakash Saini" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iIzM4OGUzYyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjYwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlJQUzwvdGV4dD48L3N2Zz4='">
+                    <h3 style="color: #0033cc; margin-bottom: 0.5rem;">Jay Prakash Saini</h3>
+                    <p style="color: #f57c00; font-weight: 500; margin-bottom: 1rem;">Hon'ble Vice Chancellor & Patron</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Institution:</strong> MMMUT Gorakhpur</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Role:</strong> Chief Patron of FDP PRIMEAI-2025</p>
+                    <p><strong>Leadership:</strong> Guiding MMMUT's excellence in technical education and research</p>
+                </div>
+
+                <div class="card" style="text-align: left;">
+                    <img src="images/speaker-rakesh-kumar.webp" alt="Prof. Rakesh Kumar" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI2Y1N2MwMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjYwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPi9SL1xL3N2Zz4='">
+                    <h3 style="color: #0033cc; margin-bottom: 0.5rem;">Rakesh Kumar</h3>
+                    <p style="color: #f57c00; font-weight: 500; margin-bottom: 1rem;">Professor & Head</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Qualification:</strong> PhD/IIT Roorkee</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Area of Interest:</strong> Mobile & Distributed Computing, Internet of Things, Sensor Networks, Network Security, Machine Learning, Cloud Computing and Image Processing</p>
+                    <p><strong>Email ID:</strong> rkiitr@gmail.com</p>
+                </div>
+                
+                <div class="card" style="text-align: left;">
+                    <img src="images/speaker-satya-yadav.jpg" alt="Dr. Satya Prakash Yadav" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iIzFmNzdjYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjYwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlNQWTwvdGV4dD48L3N2Zz4='">
+                    <h3 style="color: #0033cc; margin-bottom: 0.5rem;">Satya Prakash Yadav</h3>
+                    <p style="color: #f57c00; font-weight: 500; margin-bottom: 1rem;">Associate Professor & Convener</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Qualification:</strong> PhD</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Area of Interest:</strong> Machine Learning, Deep Learning, Artificial Intelligence, Explainable AI</p>
+                    <p><strong>Email ID:</strong> satya@mmmut.ac.in</p>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- NIRF Rankings -->
+    <section class="ranking-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div style="display: inline-block; background: #f57c00; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 500; margin-bottom: 1rem;">
+                    EXCELLENCE RECOGNIZED
+                </div>
+                <h2 class="section-title">NIRF Rankings 2024</h2>
+                <p style="color: #666; font-size: 1.1rem;">Madan Mohan Malaviya University of Technology</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="ranking-card orange">
+                    <div class="ranking-badge orange">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                        </svg>
+                    </div>
+                    <h3>Overall Ranking</h3>
+                    <div class="rank-number orange">99th</div>
+                    <p style="color: #666;">NIRF India Rankings 2024</p>
+                </div>
+
+                <div class="ranking-card blue">
+                    <div class="ranking-badge blue">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3>Engineering</h3>
+                    <div class="rank-number blue">60th</div>
+                    <p style="color: #666;">Among Engineering Colleges</p>
+                </div>
+
+                <div class="ranking-card orange">
+                    <div class="ranking-badge orange">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>University</h3>
+                    <div class="rank-number orange">68th</div>
+                    <p style="color: #666;">Among All Universities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-section" id="registration">
+                <h2>Ready to Elevate Your AI Expertise?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Join us for an immersive experience in ML, DL, and Explainable AI</p>
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Registration Fees:</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">💵 ₹250 - MMMUT Affiliated & Online Participants</p>
+                    <p style="font-size: 1.1rem;">💵 ₹1000 - Offline External Candidates</p>
+                </div>
+                <div>
+                    <a href="#" class="btn btn-secondary" onclick="alert('Registration link will be updated soon'); return false;">Register Now →</a>
+                    <a href="schedule.html" class="btn btn-outline">View Schedule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FDP PRIMEAI-2025. Organized by Department of Computer Science & Engineering, MMMUT Gorakhpur.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="schedule.html">Schedule</a> | 
+                <a href="speakers.html">Speakers</a>
+            </p>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">Web Developer: <strong>Priyanshu Chaurasia</strong></p>
+        </div>
+    </footer>
+</body>
+</html>

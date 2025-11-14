@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About PRIMEAI-2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Scrolling Notice Bar */
+        .notice-bar {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 0.8rem 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .notice-content {
+            display: flex;
+            animation: scroll-left 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .notice-content span {
+            padding-right: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        nav {
+            background: #ffffff;
+        }
+
+        nav .logo-container {
+            background: #ffffff;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #000000;
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        nav .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        nav .nav-links {
+            background: #ffffff;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .nav-links .container {
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background: rgba(245, 124, 0, 0.1);
+            color: #f57c00;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .paper {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .paper.border-top {
+            border-top: 6px solid #f57c00;
+        }
+
+        .paper h2 {
+            color: #f57c00;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .paper p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .gradient-card {
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .gradient-card.purple {
+            background: #000000;
+        }
+
+        .gradient-card.pink {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+        }
+
+        .gradient-card h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .objective-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .objective-number {
+            background: #f57c00;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        ul {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-left: 2rem;
+        }
+
+        ul li strong {
+            color: #f57c00;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid #f57c00;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .stat-card.orange { border-top-color: #ff6f00; }
+        .stat-card.green { border-top-color: #f57c00; }
+        .stat-card.purple { border-top-color: #000000; }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #f57c00;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card.orange .stat-number { color: #ff6f00; }
+        .stat-card.green .stat-number { color: #f57c00; }
+        .stat-card.purple .stat-number { color: #000000; }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: #000000;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 3px solid #f57c00;
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box ul {
+            margin-left: 2rem;
+            color: white;
+        }
+
+        .highlight-box ul li strong {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #f57c00;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #f57c00;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #f5f5f5;
+        }
+
+        footer {
+            background: #000000;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 3px solid #f57c00;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .notice-content span {
+                font-size: 0.85rem;
+                padding-right: 50px;
+            }
+
+            nav .logo-container {
+                padding: 0.8rem 0;
+            }
+
+            nav .logo {
+                font-size: 1.3rem;
+                gap: 0.8rem;
+            }
+
+            nav .logo img {
+                height: 40px;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .hero-banner h1 {
+                font-size: 2rem;
+            }
+
+            .hero-banner p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .paper {
+                padding: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .gradient-card {
+                padding: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.2rem;
+            }
+
+            .feature-icon svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 1.5rem;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.1rem;
+            }
+
+            nav .logo img {
+                height: 35px;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Notice Bar -->
+    <div class="notice-bar">
+        <div class="notice-content">
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <div class="container">
+                <img src="images/mmmut-logo.png" alt="MMMUT Logo" style="height: 60px;" onerror="this.style.display='none'">
+                <a href="index.html" class="logo">PRIMEAI-2025</a>
+                <div style="width: 60px;"></div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <div class="container">
+            <h1>About PRIMEAI-2025</h1>
+            <p style="font-size: 1.3rem;">Process-centric and Reward-based Interpretable Models in Explainable AI</p>
+            <p style="font-size: 1.1rem; margin-top: 1rem; opacity: 0.9;">December 23-30, 2025 | Hybrid Mode | 8-Day Comprehensive Programme</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <!-- Stats Section -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Days Programme</div>
+                </div>
+                <div class="stat-card orange">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Expert Speakers</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">Expert Sessions</div>
+                </div>
+                <div class="stat-card purple">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Hands-on Training</div>
+                </div>
+            </div>
+
+            <div class="paper border-top">
+                <h2>About the FDP</h2>
+                <p>
+                    The <strong>Faculty Development Programme (FDP) on Process-centric and Reward-based Interpretable Models in Explainable AI (PRIMEAI-2025)</strong> is a comprehensive 8-day programme meticulously designed to provide participants with in-depth knowledge of Machine Learning (ML), Deep Learning (DL), and Explainable AI (XAI).
+                </p>
+                <p>
+                    This FDP addresses contemporary challenges in AI by emphasizing <strong>process-based reward interpretability</strong>, combining state-of-the-art ML/DL techniques with explainable AI frameworks. The programme focuses on making AI models <strong>transparent, accountable, and trustworthy</strong> - essential attributes for modern AI applications in critical domains like healthcare, finance, and autonomous systems.
+                </p>
+                <p>
+                    Participants will gain <strong>hands-on experience</strong> with cutting-edge tools and frameworks including Captum, What-If Tool, TensorBoard, SHAP, LIME, and more. Learn from distinguished faculty from premier international institutions (University of Ljubljana), top IIITs (Allahabad, Lucknow), and industry leaders from Google Cloud Platform and Microsoft Japan.
+                </p>
+            </div>
+
+            <!-- Key Training Areas -->
+            <div class="highlight-box">
+                <h3>Key Training Areas</h3>
+                <ul>
+                    <li><strong>ML/DL Foundations:</strong> Core algorithms, neural networks, feature engineering, and evaluation metrics</li>
+                    <li><strong>Explainable AI (XAI):</strong> SHAP, LIME, Integrated Gradients, DeepLIFT, Grad-CAM, and attention mechanisms</li>
+                    <li><strong>PRIMEAI Framework:</strong> Process + Reward + Interpretability approach for transparent AI systems</li>
+                    <li><strong>Advanced DL:</strong> CNNs, RNNs/LSTMs, Transformers, GANs, and LLMs with interpretability</li>
+                    <li><strong>Reinforcement Learning:</strong> Reward modeling, policy gradients, and multi-agent RL</li>
+                    <li><strong>Industry Applications:</strong> Healthcare diagnostics, financial fraud detection, autonomous systems, and NLP</li>
+                    <li><strong>XAI Tools:</strong> Hands-on with Captum, What-If Tool, TensorBoard, and visualization frameworks</li>
+                    <li><strong>Future Directions:</strong> Causal inference, counterfactuals, foundation models, and ethical AI</li>
+                </ul>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="gradient-card purple">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h2>About MMMUT Gorakhpur</h2>
+                    <p>
+                        <strong>Madan Mohan Malaviya University of Technology, Gorakhpur</strong> was established in 2013 by the Government of Uttar Pradesh as a non-affiliating technical university, converted from the prestigious Madan Mohan Malaviya Engineering College (est. 1962).
+                    </p>
+                    <p>
+                        The university is committed to providing <strong>quality technical education</strong> and fostering innovation and research. With state-of-the-art infrastructure, modern laboratories, and a dedicated faculty comprising accomplished researchers and educators, MMMUT has earned its place among India's premier technical institutions.
+                    </p>
+                    <p style="margin-top: 1.5rem; font-weight: 700; font-size: 1.2rem;">
+                        NIRF Rankings:<br>
+                        • 60th in Engineering<br>
+                        • 68th among Universities<br>
+                        • 99th Overall in India<br>
+                        • NAAC Grade "A" University
+                    </p>
+                </div>
+
+                <div class="gradient-card pink">
+                    <div class="icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h2>CSE Department</h2>
+                    <p>
+                        The <strong>Department of Computer Science & Engineering</strong> was established in <strong>1984</strong> and has since earned recognition as one of the top Computer Science & Engineering programs in Uttar Pradesh.
+                    </p>
+                    <p>
+                        The department offers comprehensive <strong>UG (B.Tech), PG (M.Tech, M.Sc.), and Ph.D. programs</strong> with state-of-the-art facilities including:
+                    </p>
+                    <ul style="color: white; margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Advanced computing labs with latest hardware</li>
+                        <li>AI/ML research centers and GPU clusters</li>
+                        <li>Industry collaboration platforms</li>
+                        <li>Dedicated faculty with expertise in AI, ML, DL, IoT, Cybersecurity</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">
+                        Our faculty comprises accomplished researchers and educators dedicated to nurturing the next generation of computing professionals and innovators.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div style="margin-top: 4rem;">
+                <h2 style="text-align: center; font-size: 2rem; color: #f57c00; margin-bottom: 1rem;">Programme Features</h2>
+                <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 3rem;">Why PRIMEAI-2025 is the Perfect Learning Experience</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3>Hybrid Mode</h3>
+                        <p>Attend online from anywhere or join us offline at MMMUT campus for face-to-face interactions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>International Faculty</h3>
+                        <p>Learn from experts at University of Ljubljana, Google Cloud, Microsoft Japan, and premier IIITs</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <h3>Industry Insights</h3>
+                        <p>Guest lectures from Google Cloud Platform and Microsoft on real-world AI applications</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>Hands-on Labs</h3>
+                        <p>Practical sessions with XAI tools: Captum, SHAP, LIME, TensorBoard, What-If Tool</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <h3>Certificate</h3>
+                        <p>Official certificate from MMMUT for participants with 80%+ attendance</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="8.5" cy="7" r="4"/>
+                                <line x1="18" y1="8" x2="23" y2="13"/>
+                                <line x1="23" y1="8" x2="18" y2="13"/>
+                            </svg>
+                        </div>
+                        <h3>Networking</h3>
+                        <p>Connect with faculty, researchers, and industry professionals from across India</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Learning Materials</h3>
+                        <p>Comprehensive digital resources, code repositories, and research papers</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                                <line x1="6" y1="1" x2="6" y2="4"/>
+                                <line x1="10" y1="1" x2="10" y2="4"/>
+                                <line x1="14" y1="1" x2="14" y2="4"/>
+                            </svg>
+                        </div>
+                        <h3>Tea/Coffee Breaks</h3>
+                        <p>High tea during inaugural and valedictory sessions with informal networking</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper border-top" style="margin-top: 3rem; border-top-color: #f57c00;">
+                <h2>Programme Objectives</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Our comprehensive programme aims to achieve the following learning outcomes:</p>
+                <div class="objectives-grid">
+                    <div class="objective-item">
+                        <div class="objective-number">1</div>
+                        <div><strong>Foundational Mastery:</strong> Comprehensive understanding of ML, DL, and XAI concepts from basics to advanced topics</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="objective-number">2</div>
+                        <div><strong>Practical Skills:</strong> Develop hands-on skills in implementing explainable AI models using industry-standard tools</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="objective-number">3</div>
+                        <div><strong>PRIMEAI Framework:</strong> Master process-centric reward modeling and interpretability in reinforcement learning</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="objective-number">4</div>
+                        <div><strong>Ethical AI:</strong> Understand ethical implications, bias mitigation, and responsible AI development practices</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="objective-number">5</div>
+                        <div><strong>Tool Proficiency:</strong> Hands-on experience with Captum, SHAP, LIME, TensorBoard, What-If Tool, and visualization frameworks</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="objective-number">6</div>
+                        <div><strong>Research & Networking:</strong> Foster research collaboration, academic networking, and future research opportunities</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper border-top" style="border-top-color: #4caf50;">
+                <h2>👥 Who Should Attend?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">This FDP is designed for participants from diverse academic and professional backgrounds:</p>
+                <ul>
+                    <li><strong>Faculty Members:</strong> Professors, Associate Professors, Assistant Professors from engineering colleges, universities, and technical institutions</li>
+                    <li><strong>Research Scholars:</strong> Ph.D. and M.Tech scholars pursuing advanced degrees in AI, ML, Computer Science, and related fields</li>
+                    <li><strong>Postgraduate Students:</strong> M.Tech, M.Sc., MCA students specializing in computer science, data science, AI/ML domains</li>
+                    <li><strong>Industry Professionals:</strong> Data scientists, ML engineers, AI researchers, and professionals working in AI/ML development and deployment</li>
+                </ul>
+            </div>
+
+            <!-- Learning Outcomes -->
+            <div class="paper border-top" style="border-top-color: #9c27b0;">
+                <h2>📈 Learning Outcomes</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">By the end of this programme, participants will be able to:</p>
+                <ul>
+                    <li>Design and implement <strong>interpretable machine learning models</strong> for real-world applications</li>
+                    <li>Apply <strong>XAI techniques</strong> (SHAP, LIME, Grad-CAM) to explain black-box models</li>
+                    <li>Develop <strong>reward-based interpretable systems</strong> using the PRIMEAI framework</li>
+                    <li>Utilize modern <strong>XAI tools and visualization frameworks</strong> for model debugging and interpretation</li>
+                    <li>Understand <strong>transformer architectures</strong> and attention mechanisms in LLMs and vision models</li>
+                    <li>Implement <strong>responsible AI practices</strong> with bias detection and mitigation strategies</li>
+                    <li>Apply learned concepts to <strong>industry domains</strong>: healthcare, finance, autonomous systems, NLP</li>
+                    <li>Contribute to <strong>XAI research</strong> with knowledge of future directions and open problems</li>
+                </ul>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="cta-box">
+                <h2>🚀 Ready to Master Explainable AI?</h2>
+                <p>Join us for an immersive 8-day journey into the world of interpretable and transparent AI systems</p>
+                <p style="font-weight: 700; font-size: 1.3rem; margin-bottom: 2rem;">
+                    Registration Fee: ₹250 (Online/MMMUT) | ₹1000 (Offline External)
+                </p>
+                <a href="index.html#registration" class="btn">Register Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FDP PRIMEAI-2025. Organized by Department of Computer Science & Engineering, MMMUT Gorakhpur.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="schedule.html">Schedule</a> | 
+                <a href="speakers.html">Speakers</a>
+            </p>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">Web Developer: <strong>Priyanshu Chaurasia</strong></p>
+        </div>
+    </footer>
+</body>
+</html>

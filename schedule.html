@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - PRIMEAI-2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Scrolling Notice Bar */
+        .notice-bar {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 0.8rem 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .notice-content {
+            display: flex;
+            animation: scroll-left 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .notice-content span {
+            padding-right: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        nav {
+            background: #ffffff;
+        }
+
+        nav .logo-container {
+            background: #ffffff;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #000000;
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        nav .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        nav .nav-links {
+            background: #ffffff;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .nav-links .container {
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background: rgba(245, 124, 0, 0.1);
+            color: #f57c00;
+        }
+
+        .hero-banner {
+            background: #f57c00;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f57c00;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #f57c00;
+            color: white;
+        }
+
+        th {
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #fff3e0;
+        }
+
+        .day-cell {
+            border-left: 5px solid #f57c00;
+            font-weight: 700;
+            color: #1976d2;
+            font-size: 1.1rem;
+        }
+
+        .time {
+            color: #1976d2;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .session-badge {
+            display: inline-block;
+            background: #f57c00;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .speaker {
+            color: #666;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .paper {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .organizer-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #f57c00;
+        }
+
+        .organizer-card.green { border-top-color: #f57c00; }
+        .organizer-card.blue { border-top-color: #000000; }
+        .organizer-card.orange { border-top-color: #ff6f00; }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+
+        .badge-success { background: #f57c00; }
+        .badge-info { background: #000000; }
+        .badge-warning { background: #ff6f00; }
+        .badge-primary { background: #f57c00; }
+        .badge-secondary { background: #000000; }
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+
+        .info-box {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+
+        .info-box h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-left: 1.5rem;
+        }
+
+        footer {
+            background: #000000;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 3px solid #f57c00;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .notice-content span {
+                font-size: 0.85rem;
+                padding-right: 50px;
+            }
+
+            nav .logo-container {
+                padding: 0.8rem 0;
+            }
+
+            nav .logo {
+                font-size: 1.3rem;
+                gap: 0.8rem;
+            }
+
+            nav .logo img {
+                height: 40px;
+            }
+
+            nav .nav-links {
+                padding: 0.5rem 0;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .hero-banner h1 { 
+                font-size: 1.8rem; 
+            }
+            
+            .hero-banner p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            table { 
+                font-size: 0.85rem;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            th, td { 
+                padding: 0.8rem; 
+            }
+
+            .day-cell {
+                font-size: 0.95rem;
+            }
+
+            .session-badge {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.6rem;
+            }
+
+            .time {
+                font-size: 0.9rem;
+            }
+
+            .grid { 
+                gap: 1rem;
+                grid-template-columns: 1fr;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .organizer-card {
+                padding: 1.5rem;
+            }
+
+            .organizer-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .badge {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.6rem;
+            }
+
+            .info-box {
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .info-box h2 {
+                font-size: 1.3rem;
+            }
+
+            .info-box ul {
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.1rem;
+            }
+
+            nav .logo img {
+                height: 35px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-banner p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 0.6rem;
+            }
+
+            .info-box h2 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Notice Bar -->
+    <div class="notice-bar">
+        <div class="notice-content">
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <div class="container">
+                <img src="images/mmmut-logo.png" alt="MMMUT Logo" style="height: 60px;" onerror="this.style.display='none'">
+                <a href="index.html" class="logo">PRIMEAI-2025</a>
+                <div style="width: 60px;"></div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <div class="container">
+            <h1>📅 Programme Schedule</h1>
+            <p style="font-size: 1.3rem;">23-30 December 2025 | 8 Days Comprehensive Programme</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Detailed Session Schedule</h2>
+            <p class="section-subtitle">Comprehensive 8-day programme with expert sessions on ML, DL, and Explainable AI</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">📅 Day</th>
+                        <th style="width: 42.5%;">Morning Session (11:00 AM - 1:00 PM)</th>
+                        <th style="width: 42.5%;">Afternoon Session (3:00 PM - 5:00 PM)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="day-cell">Day 1<br>(23-12-2025)</td>
+                        <td>
+                            <div class="time">9:30 AM to 10:30 AM</div>
+                            <span class="session-badge">Inaugural Session</span>
+                            <div><strong>Inaugural Session + High Tea + Interaction</strong></div>
+                            <br>
+                            <div class="time">10:30 AM to 12:30 PM</div>
+                            <span class="session-badge">Session 1</span>
+                            <div><strong>Topic:</strong> Foundations of ML/DL & XAI</div>
+                            <div class="speaker">👤 Prof. Satish Kumar Singh, IIIT Allahabad</div>
+                        </td>
+                        <td>
+                            <div class="time">3:00 PM to 5:00 PM</div>
+                            <span class="session-badge">Session 2</span>
+                            <div><strong>Topic:</strong> Core ML Algorithms & Feature Engineering</div>
+                            <div class="speaker">👤 Dr. Soumendu Chakrabourty, IIIT Lucknow</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Day 2<br>(24-12-2025)</td>
+                        <td>
+                            <div class="time">11:00 AM to 1:00 PM</div>
+                            <span class="session-badge">Session 3</span>
+                            <div><strong>Topic:</strong> Interpretability in ML Models</div>
+                            <div class="speaker">👤 Dr. Sandeep Singh Sengar, Cardiff School of Technologies</div>
+                        </td>
+                        <td>
+                            <div class="time">3:00 PM to 5:00 PM</div>
+                            <span class="session-badge">Session 4</span>
+                            <div><strong>Topic:</strong> Reward Modelling in ML & RL</div>
+                            <div class="speaker">👤 Dr. Satya Prakash Yadav, MMMUT</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Day 3<br>(26-12-2025)</td>
+                        <td>
+                            <div class="time">11:00 AM to 1:00 PM</div>
+                            <span class="session-badge">Session 5</span>
+                            <div><strong>Topic:</strong> Neural Network Fundamentals & Interpretability</div>
+                            <div class="speaker">👤 Prof. Rakesh Kumar, MMMUT</div>
+                        </td>
+                        <td>
+                            <div class="time">3:00 PM to 5:00 PM</div>
+                            <span class="session-badge">Session 6</span>
+                            <div><strong>Topic:</strong> Deep Learning Interpretability Techniques</div>
+                            <div class="speaker">👤 Dr. Shivram Dubey, IIIT Allahabad</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Day 4<br>(27-12-2025)</td>
+                        <td>
+                            <div class="time">11:00 AM to 1:00 PM</div>
+                            <span class="session-badge">Session 7</span>
+                            <div><strong>Topic:</strong> Feature Attribution Methods in DL</div>
+                            <div class="speaker">👤 Dr. Nayaneesh Kumar Mishra, CEO N-Code Sutram</div>
+                        </td>
+                        <td>
+                            <div class="time">3:00 PM to 5:00 PM</div>
+                            <span class="session-badge">Session 8</span>
+                            <div><strong>Topic:</strong> Advanced Deep Learning & Emerging Techniques</div>
+                            <div class="speaker">👤 Dr. Shivram Dubey, IIIT Allahabad</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Day 5<br>(29-12-2025)</td>
+                        <td>
+                            <div class="time">11:00 AM to 1:00 PM</div>
+                            <span class="session-badge">Session 9</span>
+                            <div><strong>Topic:</strong> Human-in-the-loop Interpretability</div>
+                            <div class="speaker">👤 Venkat Desai, Sr. Specialist, Microsoft Japan</div>
+                        </td>
+                        <td>
+                            <div class="time">3:00 PM to 5:00 PM</div>
+                            <span class="session-badge">Session 10</span>
+                            <div><strong>Topic:</strong> Applications of PRIMEAI in ML/DL</div>
+                            <div class="speaker">👤 Nagendra Sharma, Google Cloud Platform (Field CTO)</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Day 6<br>(30-12-2025)</td>
+                        <td>
+                            <div class="time">11:00 AM to 1:00 PM</div>
+                            <span class="session-badge">Session 11</span>
+                            <div><strong>Topic:</strong> Future Directions & Research Opportunities</div>
+                            <div class="speaker">👤 Prof. Peter Peer, University of Ljubljana</div>
+                        </td>
+                        <td>
+                            <div class="time">1 PM to 6 PM</div>
+                            <span class="session-badge">Valedictory</span>
+                            <div><strong>Valedictory Session + High Tea</strong></div>
+                            <div>Certificate Distribution & Feedback</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 4rem;">
+                <h2 class="section-title">👥 Organizing Committee</h2>
+                
+                <div class="grid grid-3" style="margin-top: 2rem;">
+                    <div class="organizer-card green">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/patron.jpg" alt="Prof. Jay Prakash Saini" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #4caf50;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%234caf50%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EJP%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-success">Patron</span>
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Prof. Jay Prakash Saini</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Hon'ble Vice Chancellor</p>
+                        <p style="color: #666;">MMMUT, Gorakhpur, India</p>
+                    </div>
+
+                    <div class="organizer-card blue">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/chairman.jpg" alt="Prof. Rakesh Kumar" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #2196f3;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%232196f3%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ERK%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-info">Chairman</span>
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Prof. Rakesh Kumar</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Head, Computer Science and Engineering Department</p>
+                        <p style="color: #666;">MMMUT, Gorakhpur, India</p>
+                    </div>
+
+                    <div class="organizer-card orange">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/convener.jpg" alt="Dr. Satya Prakash Yadav" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #f57c00;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESP%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-warning">Programme Convener</span>
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Satya Prakash Yadav</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Associate Professor</p>
+                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+                    </div>
+                </div>
+
+                <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: #f57c00; font-size: 1.5rem;">Program Coordinators</h3>
+                <div class="grid grid-2">
+                    <div class="paper" style="border-left: 4px solid #f57c00;">
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Sumit Kumar</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
+                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+                    </div>
+                    <div class="paper" style="border-left: 4px solid #f57c00;">
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Pawan Kumar Mall</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
+                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+                    </div>
+                </div>
+
+                <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: #ff6f00; font-size: 1.5rem;">Program Co-Coordinators</h3>
+                <div class="grid grid-2">
+                    <div class="paper" style="border-left: 4px solid #1565c0;">
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Pradeep Kumar Singh</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
+                        <p style="color: #666;">Computer Science and Engineering, MMMUT Gorakhpur, India</p>
+                    </div>
+                    <div class="paper" style="border-left: 4px solid #1565c0;">
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Swapnita Srivastava</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
+                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+                    </div>
+                    <div class="paper" style="border-left: 4px solid #1565c0;">
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Anu Raj</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
+                        <p style="color: #666;">Computer Science and Engineering, MMMUT Gorakhpur, India</p>
+                    </div>
+                    <div class="paper" style="border-left: 4px solid #1565c0;">
+                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Shailesh Kumar</h3>
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
+                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h2>📋 Important Information</h2>
+                <ul>
+                    <li>All sessions will be conducted in <strong>hybrid mode</strong> (both online and offline)</li>
+                    <li>Participants are encouraged to bring their <strong>laptops</strong> for hands-on sessions</li>
+                    <li>Course materials and resources will be shared <strong>digitally</strong></li>
+                    <li>Tea/Coffee breaks will be provided between sessions</li>
+                    <li>Certificates will be awarded to participants with <strong>minimum 80% attendance</strong></li>
+                    <li>Cultural visit to Kushinagar includes lunch and transportation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FDP PRIMEAI-2025. Organized by Department of Computer Science & Engineering, MMMUT Gorakhpur.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="schedule.html">Schedule</a> | 
+                <a href="speakers.html">Speakers</a>
+            </p>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">Web Developer: <strong>Priyanshu Chaurasia</strong></p>
+        </div>
+    </footer>
+</body>
+</html>
