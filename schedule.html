@@ -220,6 +220,51 @@
             margin-top: 0.5rem;
         }
 
+        /* Mobile Schedule Cards - Hidden on Desktop */
+        .schedule-cards {
+            display: none;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border-left: 5px solid #f57c00;
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .session-card {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .session-card:last-child {
+            border-bottom: none;
+        }
+
+        .session-header {
+            background: #fff3e0;
+            padding: 0.8rem 1rem;
+            margin: -1.5rem -1.5rem 1rem -1.5rem;
+            border-bottom: 2px solid #f57c00;
+        }
+
+        .session-header h4 {
+            color: #f57c00;
+            font-weight: 700;
+            margin: 0;
+            font-size: 1rem;
+        }
+
         .paper {
             background: white;
             padding: 2rem;
@@ -351,19 +396,34 @@
                 font-size: 1rem;
             }
 
-            table { 
-                font-size: 0.85rem;
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-            
-            th, td { 
-                padding: 0.8rem; 
+            /* Hide table on mobile, show cards */
+            table {
+                display: none;
             }
 
-            .day-cell {
+            .schedule-cards {
+                display: block;
+            }
+
+            .day-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .day-header {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .session-card {
+                padding: 1.2rem;
+            }
+
+            .session-header h4 {
                 font-size: 0.95rem;
+            }
+
+            .time {
+                font-size: 0.9rem;
             }
 
             .session-badge {
@@ -371,7 +431,7 @@
                 padding: 0.25rem 0.6rem;
             }
 
-            .time {
+            .speaker {
                 font-size: 0.9rem;
             }
 
@@ -390,6 +450,11 @@
 
             .organizer-card h3 {
                 font-size: 1.1rem;
+            }
+
+            .organizer-card img {
+                width: 100px !important;
+                height: 100px !important;
             }
 
             .badge {
@@ -447,16 +512,21 @@
                 font-size: 0.9rem;
             }
 
-            table {
-                font-size: 0.8rem;
+            .day-header {
+                font-size: 1rem;
             }
 
-            th, td {
-                padding: 0.6rem;
+            .session-card {
+                padding: 1rem;
             }
 
             .info-box h2 {
                 font-size: 1.1rem;
+            }
+
+            .organizer-card img {
+                width: 80px !important;
+                height: 80px !important;
             }
         }
     </style>
@@ -474,7 +544,7 @@
         <div class="logo-container">
             <div class="container">
                 <img src="images/mmmut-logo.png" alt="MMMUT Logo" style="height: 60px;" onerror="this.style.display='none'">
-                <a href="index.html" class="logo">PRIMEAI-2025</a>
+                <a href="index.html" class="logo">Process Reward Interpretability Model with Explainable AI (PRIMEAI-2025)</a>
                 <div style="width: 60px;"></div>
             </div>
         </div>
@@ -493,14 +563,14 @@
     <div class="hero-banner">
         <div class="container">
             <h1>📅 Programme Schedule</h1>
-            <p style="font-size: 1.3rem;">23-30 December 2025 | 8 Days Comprehensive Programme</p>
+            <p style="font-size: 1.3rem;">23-30 December 2025 | 6 Days Comprehensive Programme</p>
         </div>
     </div>
 
     <section class="section">
         <div class="container">
             <h2 class="section-title">Detailed Session Schedule</h2>
-            <p class="section-subtitle">Comprehensive 8-day programme with expert sessions on ML, DL, and Explainable AI</p>
+            <p class="section-subtitle">Comprehensive 6-day programme with expert sessions on ML, DL, and Explainable AI</p>
 
             <table>
                 <thead>
@@ -608,6 +678,150 @@
                 </tbody>
             </table>
 
+            <!-- Mobile Schedule Cards -->
+            <div class="schedule-cards">
+                <!-- Day 1 -->
+                <div class="day-card">
+                    <div class="day-header">Day 1 - December 23, 2025</div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌅 Morning Session</h4>
+                        </div>
+                        <div class="time">9:30 AM to 10:30 AM</div>
+                        <span class="session-badge">Inaugural Session</span>
+                        <div style="margin-top: 0.5rem;"><strong>Inaugural Session + High Tea + Interaction</strong></div>
+                        <br>
+                        <div class="time" style="margin-top: 1rem;">10:30 AM to 12:30 PM</div>
+                        <span class="session-badge">Session 1</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Foundations of ML/DL & XAI</div>
+                        <div class="speaker">👤 Prof. Satish Kumar Singh, IIIT Allahabad</div>
+                    </div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌆 Afternoon Session</h4>
+                        </div>
+                        <div class="time">3:00 PM to 5:00 PM</div>
+                        <span class="session-badge">Session 2</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Core ML Algorithms & Feature Engineering</div>
+                        <div class="speaker">👤 Dr. Soumendu Chakrabourty, IIIT Lucknow</div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="day-card">
+                    <div class="day-header">Day 2 - December 24, 2025</div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌅 Morning Session</h4>
+                        </div>
+                        <div class="time">11:00 AM to 1:00 PM</div>
+                        <span class="session-badge">Session 3</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Interpretability in ML Models</div>
+                        <div class="speaker">👤 Dr. Sandeep Singh Sengar, Cardiff School of Technologies</div>
+                    </div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌆 Afternoon Session</h4>
+                        </div>
+                        <div class="time">3:00 PM to 5:00 PM</div>
+                        <span class="session-badge">Session 4</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Reward Modelling in ML & RL</div>
+                        <div class="speaker">👤 Dr. Satya Prakash Yadav, MMMUT</div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="day-card">
+                    <div class="day-header">Day 3 - December 26, 2025</div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌅 Morning Session</h4>
+                        </div>
+                        <div class="time">11:00 AM to 1:00 PM</div>
+                        <span class="session-badge">Session 5</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Neural Network Fundamentals & Interpretability</div>
+                        <div class="speaker">👤 Prof. Rakesh Kumar, MMMUT</div>
+                    </div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌆 Afternoon Session</h4>
+                        </div>
+                        <div class="time">3:00 PM to 5:00 PM</div>
+                        <span class="session-badge">Session 6</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Deep Learning Interpretability Techniques</div>
+                        <div class="speaker">👤 Dr. Shivram Dubey, IIIT Allahabad</div>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="day-card">
+                    <div class="day-header">Day 4 - December 27, 2025</div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌅 Morning Session</h4>
+                        </div>
+                        <div class="time">11:00 AM to 1:00 PM</div>
+                        <span class="session-badge">Session 7</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Feature Attribution Methods in DL</div>
+                        <div class="speaker">👤 Dr. Nayaneesh Kumar Mishra, CEO N-Code Sutram</div>
+                    </div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌆 Afternoon Session</h4>
+                        </div>
+                        <div class="time">3:00 PM to 5:00 PM</div>
+                        <span class="session-badge">Session 8</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Advanced Deep Learning & Emerging Techniques</div>
+                        <div class="speaker">👤 Dr. Shivram Dubey, IIIT Allahabad</div>
+                    </div>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="day-card">
+                    <div class="day-header">Day 5 - December 29, 2025</div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌅 Morning Session</h4>
+                        </div>
+                        <div class="time">11:00 AM to 1:00 PM</div>
+                        <span class="session-badge">Session 9</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Human-in-the-loop Interpretability</div>
+                        <div class="speaker">👤 Venkat Desai, Sr. Specialist, Microsoft Japan</div>
+                    </div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌆 Afternoon Session</h4>
+                        </div>
+                        <div class="time">3:00 PM to 5:00 PM</div>
+                        <span class="session-badge">Session 10</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Applications of PRIMEAI in ML/DL</div>
+                        <div class="speaker">👤 Nagendra Sharma, Field CTO, Google Cloud Platform</div>
+                    </div>
+                </div>
+
+                <!-- Day 6 -->
+                <div class="day-card">
+                    <div class="day-header">Day 6 - December 30, 2025</div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🌅 Morning Session</h4>
+                        </div>
+                        <div class="time">11:00 AM to 1:00 PM</div>
+                        <span class="session-badge">Session 11</span>
+                        <div style="margin-top: 0.5rem;"><strong>Topic:</strong> Future Directions & Research Opportunities</div>
+                        <div class="speaker">👤 Prof. Peter Peer, University of Ljubljana</div>
+                    </div>
+                    <div class="session-card">
+                        <div class="session-header">
+                            <h4>🎓 Valedictory Session</h4>
+                        </div>
+                        <div class="time">1:00 PM to 6:00 PM</div>
+                        <span class="session-badge">Closing Ceremony</span>
+                        <div style="margin-top: 0.5rem;"><strong>Valedictory Session + High Tea + Certificate Distribution</strong></div>
+                    </div>
+                </div>
+            </div>
+
             <div style="margin-top: 4rem;">
                 <h2 class="section-title">👥 Organizing Committee</h2>
                 
@@ -643,41 +857,88 @@
                     </div>
                 </div>
 
-                <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: #f57c00; font-size: 1.5rem;">Program Coordinators</h3>
-                <div class="grid grid-2">
-                    <div class="paper" style="border-left: 4px solid #f57c00;">
-                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Sumit Kumar</h3>
-                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
-                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+                <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: #f57c00; font-size: 1.5rem;">Programme Coordinators</h3>
+                <div class="grid grid-3">
+                    <div class="organizer-card orange">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/coordinator-sumit.jpeg" alt="Dr. Sumit Kumar" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #f57c00;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESK%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-primary">Coordinator</span>
+                        <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.5rem;">Dr. Sumit Kumar</h3>
+                        <p style="color: #f57c00; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor, CSE</p>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">MMMUT, Gorakhpur</p>
+                        <p style="color: #666; font-size: 0.85rem;">📧 skcs@mmmut.ac.in</p>
+                        <p style="color: #666; font-size: 0.85rem;">📱 +91-8127710956</p>
                     </div>
-                    <div class="paper" style="border-left: 4px solid #f57c00;">
-                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Pawan Kumar Mall</h3>
-                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
-                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+
+                    <div class="organizer-card orange">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/coordinator-pradeep.jpg" alt="Dr. Pradeep Kumar Singh" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #f57c00;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EPS%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-primary">Coordinator</span>
+                        <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.5rem;">Dr. Pradeep Kumar Singh</h3>
+                        <p style="color: #f57c00; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor, CSE</p>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">MMMUT, Gorakhpur</p>
+                        <p style="color: #666; font-size: 0.85rem;">📧 pkcse@mmmut.ac.in</p>
+                    </div>
+
+                    <div class="organizer-card orange">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/coordinator-pawan.jpeg" alt="Dr. Pawan Kumar Mall" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #f57c00;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EPM%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-primary">Coordinator</span>
+                        <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.5rem;">Dr. Pawan Kumar Mall</h3>
+                        <p style="color: #f57c00; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor, CSE</p>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">MMMUT, Gorakhpur</p>
+                        <p style="color: #666; font-size: 0.85rem;">📧 pkmcse@mmmut.ac.in</p>
                     </div>
                 </div>
 
-                <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: #ff6f00; font-size: 1.5rem;">Program Co-Coordinators</h3>
-                <div class="grid grid-2">
-                    <div class="paper" style="border-left: 4px solid #1565c0;">
-                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Pradeep Kumar Singh</h3>
-                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
-                        <p style="color: #666;">Computer Science and Engineering, MMMUT Gorakhpur, India</p>
+                <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: #ff6f00; font-size: 1.5rem;">Programme Co-Coordinators</h3>
+                <div class="grid grid-3">
+                    <div class="organizer-card blue">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/co-coordinator-shailesh.jpg" alt="Dr. Shailesh Kumar" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESK%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-secondary">Co-Coordinator</span>
+                        <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Shailesh Kumar</h3>
+                        <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
                     </div>
-                    <div class="paper" style="border-left: 4px solid #1565c0;">
-                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Swapnita Srivastava</h3>
-                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
-                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+
+                    <div class="organizer-card blue">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/co-coordinator-shwet.jpeg" alt="Dr. Shwet Ketu" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESK%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-secondary">Co-Coordinator</span>
+                        <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Shwet Ketu</h3>
+                        <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
                     </div>
-                    <div class="paper" style="border-left: 4px solid #1565c0;">
-                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Anu Raj</h3>
-                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
-                        <p style="color: #666;">Computer Science and Engineering, MMMUT Gorakhpur, India</p>
+
+                    <div class="organizer-card blue">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/co-coordinator-vipul.jpg" alt="Dr. Vipul Narayan" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EVN%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-secondary">Co-Coordinator</span>
+                        <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Vipul Narayan</h3>
+                        <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
                     </div>
-                    <div class="paper" style="border-left: 4px solid #1565c0;">
-                        <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Shailesh Kumar</h3>
-                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor</p>
-                        <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
+
+                    <div class="organizer-card blue">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/co-coordinator-anu.jpg" alt="Dr. Anu Raj" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EAR%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-secondary">Co-Coordinator</span>
+                        <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Anu Raj</h3>
+                        <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
+                    </div>
+
+                    <div class="organizer-card blue">
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <img src="images/co-coordinator-swapnita.jpg" alt="Dr. Swapnita Srivastava" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESS%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="badge badge-secondary">Co-Coordinator</span>
+                        <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Swapnita Srivastava</h3>
+                        <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
                     </div>
                 </div>
             </div>
