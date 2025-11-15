@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CSE Department - PRIMEAI-2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Scrolling Notice Bar */
+        .notice-bar {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 0.8rem 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .notice-content {
+            display: flex;
+            animation: scroll-left 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .notice-content span {
+            padding-right: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        nav {
+            background: #ffffff;
+        }
+
+        nav .logo-container {
+            background: #ffffff;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #000000;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        nav .logo img {
+            height: 60px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        nav .nav-links {
+            background: #ffffff;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .nav-links .container {
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: block;
+        }
+
+        nav a:hover {
+            background: rgba(245, 124, 0, 0.1);
+            color: #f57c00;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            z-index: 1001;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            padding: 0.8rem 1rem;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #f57c00 0%, #ff6f00 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .paper {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .paper.border-top {
+            border-top: 6px solid #f57c00;
+        }
+
+        .paper h2 {
+            color: #f57c00;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .paper h3 {
+            color: #000000;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .paper p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .paper ul {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .paper ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .paper ul li strong {
+            color: #f57c00;
+        }
+
+        .vision-mission-box {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .vision-mission-box h3 {
+            color: #f57c00;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .vision-mission-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: white;
+        }
+
+        .vision-mission-box ol {
+            margin-left: 2rem;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        .vision-mission-box ol li {
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+
+        .lab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .lab-table thead {
+            background: #f57c00;
+            color: white;
+        }
+
+        .lab-table th {
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .lab-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .lab-table tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .lab-table tbody tr:hover {
+            background: #fff3e0;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #f57c00;
+            transition: all 0.3s;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left-color: #ff6f00;
+        }
+
+        .research-card h4 {
+            color: #000000;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .stat-highlight {
+            display: inline-block;
+            background: #f57c00;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+
+        footer {
+            background: #000000;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 3px solid #f57c00;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .notice-content span {
+                font-size: 0.85rem;
+                padding-right: 50px;
+            }
+
+            nav .logo-container {
+                padding: 0.8rem 0;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            nav .logo {
+                font-size: 0.9rem;
+                gap: 0.5rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav .logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                background: #f5f5f5;
+                margin-top: 0.5rem;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-banner p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .paper {
+                padding: 2rem;
+            }
+
+            .vision-mission-box {
+                padding: 1.5rem;
+            }
+
+            .lab-table {
+                font-size: 0.9rem;
+            }
+
+            .lab-table th, .lab-table td {
+                padding: 0.8rem;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.1rem;
+            }
+
+            nav .logo img {
+                height: 35px;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.5rem;
+            }
+
+            .lab-table {
+                font-size: 0.8rem;
+            }
+
+            .lab-table th, .lab-table td {
+                padding: 0.6rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Notice Bar -->
+    <div class="notice-bar">
+        <div class="notice-content">
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+            <span>Registration Open for FDP PRIMEAI-2025 | December 23-30, 2025 | Registration Fee: ₹250 (MMMUT/Online) | ₹1000 (Offline External) | Hybrid Mode Available | 10+ International & Industry Expert Speakers | Certificate by MMMUT | Limited Seats - Register Now!</span>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <div class="container">
+                <img src="images/mmmut-logo.png" alt="MMMUT Logo" style="height: 60px;" onerror="this.style.display='none'">
+                <a href="index.html" class="logo">FDP on Process Reward Interpretability Model with Explainable AI (PRIMEAI-2025)</a>
+                <div style="width: 60px;"></div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">About ▼</a>
+                        <div class="dropdown-content">
+                            <a href="about-fdp.html">About FDP</a>
+                            <a href="about-mmmut.html">About MMMUT</a>
+                            <a href="about-cse.html">About CSE Department</a>
+                        </div>
+                    </li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="organizing-committee.html">Organizing Committee</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <div class="container">
+            <h1>Department of Computer Science & Engineering</h1>
+            <p style="font-size: 1.3rem;">Leading Education, Research and Innovation in Computing</p>
+            <p style="font-size: 1.1rem; margin-top: 1rem; opacity: 0.9;">MMMUT, Gorakhpur | Established 1984</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <!-- Vision and Mission -->
+            <div class="vision-mission-box">
+                <h3>🎯 Vision</h3>
+                <p>To become a leader of education, research and innovation in the area of Computer Science and Engineering and to produce under graduates who are globally recognised as innovative and well prepared computing professionals.</p>
+                
+                <h3 style="margin-top: 2rem;">🚀 Mission</h3>
+                <ol>
+                    <li>To create, share and disseminate knowledge through research and education in the theory and application of computing.</li>
+                    <li>To train the students in different aspects of computing discipline for enhancing, augmenting and updating their technical skills.</li>
+                    <li>To inculcate the spirit of analysis, team work, innovation and professionalism among the students.</li>
+                </ol>
+            </div>
+
+            <!-- About Department -->
+            <div class="paper border-top">
+                <h2>🏫 About the Department</h2>
+                <p>
+                    The Department of Computer Science & Engineering (CSE) at MMMUT was established in <span class="stat-highlight">1984</span> and has steadily grown to become one of the premier centers for computer science education and research in Uttar Pradesh. The B. Tech in CSE program offered by the department is <span class="stat-highlight">NBA-accredited</span> under the Washington Accord, affirming its adherence to international standards in engineering education.
+                </p>
+                <p>
+                    In addition to its flagship undergraduate program, the department also offers a postgraduate M.Tech in Computer Science and Engineering, making it the <strong>first government-aided engineering institution in UP</strong> to introduce such a program. The department is also actively engaged in doctoral research through its Ph.D. programs.
+                </p>
+                <p>
+                    The department is home to numerous state-of-the-art laboratories, each designed to facilitate advanced teaching, hands-on learning, and cutting-edge research. These labs are supervised by experienced faculty members specializing in diverse domains. Additionally, a departmental library with a specialized collection of over <span class="stat-highlight">500+ books</span> in Computer Science is available for exclusive use by students and faculty members.
+                </p>
+                <p>
+                    With a commitment to academic excellence, state-of-the-art infrastructure, and a focus on emerging technologies, the Department of Computer Science & Engineering at MMMUT offers a stimulating environment for learning, innovation, and research. Its experienced faculty, well-equipped labs, and comprehensive curriculum ensure that students are well-prepared to meet global industry and research challenges.
+                </p>
+            </div>
+
+            <!-- Department Laboratories -->
+            <div class="paper border-top" style="border-top-color: #ff6f00;">
+                <h2>🔬 Department Laboratory Details</h2>
+                <p style="margin-bottom: 2rem;">The department houses 12 specialized laboratories equipped with cutting-edge technology and supervised by expert faculty members:</p>
+                
+                <table class="lab-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 60px;">Sr. No</th>
+                            <th>Lab Name</th>
+                            <th>Faculty In-Charge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>Computer Architecture and OS Lab</td>
+                            <td>Dr. Shailesh Kumar<br>Dr. Swapnita Srivastava</td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Multidisciplinary Innovation and Edge Deployment Lab</td>
+                            <td>Dr. Abhishek Verma<br>Dr. Shantanu Shahi</td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Database and Full Stack Web Development Lab</td>
+                            <td>Dr. Satya Prakash Yadav<br>Dr. Vipul Narayan</td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>Research Lab</td>
+                            <td>Dr. Shailendra Pratap Singh<br>Dr. Ninni Singh</td>
+                        </tr>
+                        <tr>
+                            <td>5.</td>
+                            <td>Data Structure and Algorithm Lab</td>
+                            <td>Dr. Raj Kumar<br>Dr. Manish Kumar Gupta</td>
+                        </tr>
+                        <tr>
+                            <td>6.</td>
+                            <td>Computer Network Lab</td>
+                            <td>Dr. Ram Kumar<br>Dr. Sanjay Kumar</td>
+                        </tr>
+                        <tr>
+                            <td>7.</td>
+                            <td>Advanced Cyber Forensics Research Lab</td>
+                            <td>Dr. Vimal Kumar<br>Dr. B.K. Sharma</td>
+                        </tr>
+                        <tr>
+                            <td>8.</td>
+                            <td>Artificial Intelligence Lab</td>
+                            <td>Dr. Ritesh Maurya<br>Dr. Satvik Vats</td>
+                        </tr>
+                        <tr>
+                            <td>9.</td>
+                            <td>Spatial Information Technology and Digital Twin Lab</td>
+                            <td>Dr. Satya Prakash Maurya<br>Dr. Pradeep Kumar Singh</td>
+                        </tr>
+                        <tr>
+                            <td>10.</td>
+                            <td>Augmented Reality and Virtual Reality Lab</td>
+                            <td>Dr. Avneesh Singh<br>Dr. Lokendra Singh Umrao</td>
+                        </tr>
+                        <tr>
+                            <td>11.</td>
+                            <td>Turing Hall</td>
+                            <td>Dr. Amit Kumar Dwivedi<br>Dr. Shwet Ketu</td>
+                        </tr>
+                        <tr>
+                            <td>12.</td>
+                            <td>Committee Room</td>
+                            <td>Dr. Pawan Kumar Mall<br>Dr. Sumit Kumar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Research Areas -->
+            <div class="paper border-top" style="border-top-color: #000000;">
+                <h2>📚 Broad Research Areas</h2>
+                <p style="margin-bottom: 2rem;">The department is actively engaged in cutting-edge research across diverse domains of Computer Science and Engineering:</p>
+                
+                <div class="research-grid">
+                    <div class="research-card">
+                        <h4>🤖 Artificial Intelligence and Machine Learning</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>🥽 Augmented and Virtual Reality</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>🔗 Blockchain and Distributed Computing</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>☁️ Cloud and Edge Computing</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>🌐 Computer Network and Communications</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>🔒 Cyber Forensics and Information Security</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>📊 Data Science and Big Data Analytics</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>👥 Digital Twin</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>🗺️ Geo-spatial Intelligence</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>⚡ High Performance Computing</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>🌍 Internet of Things</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>🛡️ Network Security and Cryptography</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>⚛️ Quantum Computing</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>📍 Spatial Information Technology</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>📐 Theoretical Computer Science</h4>
+                    </div>
+                    <div class="research-card">
+                        <h4>📡 Wireless Communications</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programs Offered -->
+            <div class="paper border-top" style="border-top-color: #f57c00;">
+                <h2>🎓 Academic Programs</h2>
+                <h3>Undergraduate Program</h3>
+                <ul>
+                    <li><strong>B.Tech in Computer Science & Engineering</strong> - NBA Accredited (Washington Accord)</li>
+                    <li>Duration: 4 years (8 semesters)</li>
+                    <li>Focus on core computing fundamentals, programming, algorithms, and emerging technologies</li>
+                </ul>
+
+                <h3>Postgraduate Program</h3>
+                <ul>
+                    <li><strong>M.Tech in Computer Science & Engineering</strong></li>
+                    <li>First government-aided engineering institution in UP to offer this program</li>
+                    <li>Advanced specializations in AI/ML, Data Science, Cyber Security, and more</li>
+                </ul>
+
+                <h3>Doctoral Program</h3>
+                <ul>
+                    <li><strong>Ph.D. in Computer Science & Engineering</strong></li>
+                    <li>Active research in diverse domains</li>
+                    <li>Guided by experienced faculty members with international publications</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FDP PRIMEAI-2025 | Department of Computer Science & Engineering, MMMUT Gorakhpur</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="index.html">Home</a> | 
+                <a href="about-fdp.html">About FDP</a> | 
+                <a href="about-mmmut.html">About MMMUT</a> | 
+                <a href="about-cse.html">About CSE Department</a> | 
+                <a href="schedule.html">Schedule</a> | 
+                <a href="speakers.html">Speakers</a> | 
+                <a href="organizing-committee.html">Organizing Committee</a>
+            </p>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">Web Developer: <strong>Priyanshu Chaurasia</strong></p>
+        </div>
+    </footer>
+</body>
+</html>
