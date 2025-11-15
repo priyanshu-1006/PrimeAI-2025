@@ -1,0 +1,14 @@
+Files to update with hamburger menu:
+- about-fdp.html ✓ (styles done, need button + JS)
+- about-mmmut.html (need all)
+- about-cse.html (need all)
+- organizing-committee.html (need all)
+
+Hamburger button HTML to add:
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+JavaScript to add before </nav> closing or before hero section
