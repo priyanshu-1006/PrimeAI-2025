@@ -73,10 +73,19 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0;
             font-family: 'Poppins', sans-serif;
             letter-spacing: 0.5px;
             white-space: nowrap;
+        }
+
+        nav .logo .logo-line {
+            display: inline;
+            font-weight: 600;
+        }
+
+        nav .logo .logo-line + .logo-line {
+            margin-left: 0.35rem;
         }
 
         nav .logo img {
@@ -252,6 +261,104 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
 
+        /* Leadership cards */
+        .leadership-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .leader-card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            padding: 2rem;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            border-top: 5px solid #f57c00;
+        }
+
+        .leader-feature {
+            max-width: 640px;
+        }
+
+        .leader-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 5px solid rgba(245, 124, 0, 0.2);
+        }
+
+        .leader-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 0.3rem;
+        }
+
+        .leader-role {
+            color: #f57c00;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leader-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        .leader-details li {
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        .leader-badge {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 0.35rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .leader-highlight {
+            border-top-color: #000000;
+            background: linear-gradient(180deg, #ffffff 0%, #fff7ef 100%);
+        }
+
+        .compact-row {
+            flex-wrap: nowrap;
+        }
+
+        .compact-row .leader-card {
+            max-width: 260px;
+            padding: 1.5rem;
+        }
+
+        .compact-row .leader-photo {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 1rem;
+        }
+
+        .compact-row .leader-name {
+            font-size: 1.1rem;
+        }
+
+        .compact-row .leader-role {
+            font-size: 0.95rem;
+        }
+
         .highlight-card {
             color: white;
         }
@@ -356,6 +463,16 @@
             background: rgba(255,255,255,0.15);
         }
 
+        @media (max-width: 1100px) {
+            .compact-row {
+                flex-wrap: wrap;
+            }
+
+            .compact-row .leader-card {
+                max-width: 320px;
+            }
+        }
+
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .notice-content span {
@@ -377,6 +494,15 @@
                 gap: 0.5rem;
                 flex-direction: column;
                 text-align: center;
+            }
+
+            nav .logo .logo-line {
+                display: block;
+                margin: 0;
+            }
+
+            nav .logo .logo-line + .logo-line {
+                margin-left: 0;
             }
 
             nav .logo img {
@@ -464,6 +590,10 @@
                 height: 40px;
             }
 
+            .leader-card {
+                max-width: 100%;
+            }
+
             .ranking-section {
                 padding: 3rem 0;
             }
@@ -542,6 +672,14 @@
                 width: 36px;
                 height: 36px;
             }
+
+            .compact-row {
+                flex-wrap: wrap;
+            }
+
+            .compact-row .leader-card {
+                max-width: 100%;
+            }
         }
 
         /* Footer */
@@ -582,7 +720,11 @@
         <div class="logo-container">
             <div class="container">
                 <img src="images/mmmut-logo.png" alt="MMMUT Logo" style="height: 60px;" onerror="this.style.display='none'">
-                <a href="index.html" class="logo">FDP on Process Reward<br>Interpretability Model <br>with Explainable AI (PRIMEAI-2025)</a>
+                <a href="index.html" class="logo">
+                    <span class="logo-line">FDP on Process Reward</span>
+                    <span class="logo-line">Interpretability Model</span>
+                    <span class="logo-line">with Explainable AI (PRIMEAI-2025)</span>
+                </a>
                 <div style="width: 60px;"></div>
             </div>
         </div>
@@ -735,36 +877,94 @@
     <section class="section" style="background: #f9f9f9; padding: 4rem 0;">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Programme Leadership</h2>
-            <div class="grid grid-3">
 
-                <div class="card" style="text-align: left;">
-                    <img src="images/patron.jpg" alt="Prof. Jay Prakash Saini" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iIzM4OGUzYyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjYwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlJQUzwvdGV4dD48L3N2Zz4='">
-                    <h3 style="color: #0033cc; margin-bottom: 0.5rem;">Jay Prakash Saini</h3>
-                    <p style="color: #f57c00; font-weight: 500; margin-bottom: 1rem;">Hon'ble Vice Chancellor & Patron</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Institution:</strong> MMMUT Gorakhpur</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Role:</strong> Chief Patron of FDP PRIMEAI-2025</p>
-                    <p><strong>Leadership:</strong> Guiding MMMUT's excellence in technical education and research</p>
-                </div>
+            <!-- Row 1: Patron -->
+            <div class="leadership-row">
+                <article class="leader-card leader-feature leader-highlight">
+                    <img src="images/patron.jpg" alt="Jay Prakash Saini" class="leader-photo">
+                    <h3 class="leader-name">Jay Prakash Saini</h3>
+                    <p class="leader-role">Hon'ble Vice Chancellor & Patron</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
+                        <li><strong>Role:</strong> Chief Patron of FDP PRIMEAI-2025</li>
+                        <li><strong>Leadership:</strong> Guiding MMMUT's excellence in technical education and research.</li>
+                    </ul>
+                </article>
+            </div>
 
-                <div class="card" style="text-align: left;">
-                    <img src="images/speaker-rakesh-kumar.webp" alt="Prof. Rakesh Kumar" style="width: 50%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI2Y1N2MwMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjYwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPi9SL1xL3N2Zz4='">
-                    <h3 style="color: #0033cc; margin-bottom: 0.5rem;">Rakesh Kumar</h3>
-                    <p style="color: #f57c00; font-weight: 500; margin-bottom: 1rem;">Professor & Head</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Qualification:</strong> PhD/IIT Roorkee</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Area of Interest:</strong> Mobile & Distributed Computing, Internet of Things, Sensor Networks, Network Security, Machine Learning, Cloud Computing and Image Processing</p>
-                    <p><strong>Email ID:</strong> rkiitr@gmail.com</p>
-                </div>
-                
-                <div class="card" style="text-align: left;">
-                    <img src="images/speaker-satya-yadav.jpg" alt="Dr. Satya Prakash Yadav" style="width: 50%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iIzFmNzdjYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjYwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlNQWTwvdGV4dD48L3N2Zz4='">
-                    <h3 style="color: #0033cc; margin-bottom: 0.5rem;">Satya Prakash Yadav</h3>
-                    <p style="color: #f57c00; font-weight: 500; margin-bottom: 1rem;">Associate Professor & Convener</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Qualification:</strong> PhD</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Area of Interest:</strong> Machine Learning, Deep Learning, Artificial Intelligence, Explainable AI</p>
-                    <p><strong>Email ID:</strong> satya@mmmut.ac.in</p>
-                </div>
+            <!-- Row 2: Chairman & Guest of Honour -->
+            <div class="leadership-row">
+                <article class="leader-card">
+                    <div class="leader-badge">Chairman</div>
+                        <img src="images/chairman.jpg" alt="Prof. Rakesh Kumar" class="leader-photo">
+                    <h3 class="leader-name">Rakesh Kumar</h3>
+                    <p class="leader-role">Professor & Head</p>
+                    <ul class="leader-details">
+                        <li><strong>Qualification:</strong> PhD/IIT Roorkee</li>
+                        <li><strong>Area of Interest:</strong> Mobile & Distributed Computing, IoT, Sensor Networks, Network Security, Machine Learning, Cloud Computing, Image Processing.</li>
+                        <li><strong>Email:</strong> rkiitr@gmail.com</li>
+                    </ul>
+                </article>
 
-                
+                <article class="leader-card">
+                    <div class="leader-badge">Guest of Honour</div>
+                    <img src="images/speaker-satish-singh.png" alt="Prof. Satish Kumar Singh" class="leader-photo">
+                    <h3 class="leader-name">Prof. Satish Kumar Singh</h3>
+                    <p class="leader-role">Professor, IIIT Allahabad</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> IIIT Allahabad</li>
+                        <li><strong>Expertise:</strong> ML Foundations, Deep Learning, Explainable AI.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- Row 3: Convener & Coordinators -->
+            <div class="leadership-row compact-row" style="margin-top: 2.5rem;">
+                <article class="leader-card">
+                    <div class="leader-badge">Convener</div>
+                    <img src="images/convener.jpg" alt="Satya Prakash Yadav" class="leader-photo">
+                    <h3 class="leader-name">Satya Prakash Yadav</h3>
+                    <p class="leader-role">Associate Professor & Convener</p>
+                    <ul class="leader-details">
+                        <li><strong>Qualification:</strong> PhD</li>
+                        <li><strong>Area of Interest:</strong> Machine Learning, Deep Learning, Artificial Intelligence, Explainable AI.</li>
+                        <li><strong>Email:</strong> satya@mmmut.ac.in</li>
+                    </ul>
+                </article>
+
+                <article class="leader-card">
+                    <div class="leader-badge">Programme Coordinator</div>
+                    <img src="images/coordinator-sumit.jpeg" alt="Dr. Sumit Kumar" class="leader-photo">
+                    <h3 class="leader-name">Dr. Sumit Kumar</h3>
+                    <p class="leader-role">Assistant Professor, CSE</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
+                        <li>📧 skcs@mmmut.ac.in</li>
+                        <li>📱 +91-8127710956</li>
+                    </ul>
+                </article>
+
+                <article class="leader-card">
+                    <div class="leader-badge">Programme Coordinator</div>
+                    <img src="images/coordinator-pradeep.jpg" alt="Dr. Pradeep Kumar Singh" class="leader-photo">
+                    <h3 class="leader-name">Dr. Pradeep Kumar Singh</h3>
+                    <p class="leader-role">Assistant Professor, CSE</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
+                        <li>📧 pkcse@mmmut.ac.in</li>
+                    </ul>
+                </article>
+
+                <article class="leader-card">
+                    <div class="leader-badge">Programme Coordinator</div>
+                    <img src="images/coordinator-pawan.jpeg" alt="Dr. Pawan Kumar Mall" class="leader-photo">
+                    <h3 class="leader-name">Dr. Pawan Kumar Mall</h3>
+                    <p class="leader-role">Assistant Professor, CSE</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
+                        <li>📧 pkmcse@mmmut.ac.in</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
