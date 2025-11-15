@@ -78,6 +78,15 @@
             white-space: nowrap;
         }
 
+        nav .logo .logo-line {
+            display: inline;
+            font-weight: 600;
+        }
+
+        nav .logo .logo-line + .logo-line {
+            margin-left: 0.35rem;
+        }
+
         nav .logo img {
             height: 60px;
             width: auto;
@@ -340,6 +349,15 @@
 
             nav .logo img {
                 height: 35px;
+
+            nav .logo .logo-line {
+                display: block;
+                margin: 0;
+            }
+
+            nav .logo .logo-line + .logo-line {
+                margin-left: 0;
+            }
             }
 
             nav a {
@@ -379,7 +397,11 @@
         <div class="logo-container">
             <div class="container">
                 <img src="images/mmmut-logo.png" alt="MMMUT Logo" style="height: 60px;" onerror="this.style.display='none'">
-                <a href="index.html" class="logo">FDP on Process Reward<br>Interpretability Model <br>with Explainable AI (PRIMEAI-2025)</a>
+                <a href="index.html" class="logo">
+                    <span class="logo-line">FDP on Process-centric and Reward-based</span>
+                    <span class="logo-line">Interpretability Model</span>
+                    <span class="logo-line">with Explainable AI</span>
+                </a>
                 <div style="width: 60px;"></div>
             </div>
         </div>
