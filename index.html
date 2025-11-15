@@ -294,6 +294,12 @@
             border: 5px solid rgba(245, 124, 0, 0.2);
         }
 
+        .leader-photo-compact {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 1rem;
+        }
+
         .leader-name {
             font-size: 1.4rem;
             font-weight: 700;
@@ -331,9 +337,26 @@
             margin-bottom: 0.8rem;
         }
 
+        .badge-chairman { background: #1e88e5; }
+        .badge-guest { background: #26c6da; }
+        .badge-convener { background: #fb8c00; }
+        .badge-coordinator { background: #43a047; }
+
         .leader-highlight {
             border-top-color: #000000;
             background: linear-gradient(180deg, #ffffff 0%, #fff7ef 100%);
+        }
+
+        .leader-card.convener-card {
+            max-width: 320px;
+            padding: 1.9rem;
+            border-top-color: #fb8c00;
+            background: linear-gradient(180deg, #fffdf6 0%, #fff3dd 100%);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .leader-card.convener-card .leader-photo {
+            border-color: rgba(251, 140, 0, 0.35);
         }
 
         .compact-row {
@@ -343,6 +366,11 @@
         .compact-row .leader-card {
             max-width: 260px;
             padding: 1.5rem;
+        }
+
+        .compact-row .leader-card.convener-card {
+            max-width: 320px;
+            padding: 1.9rem;
         }
 
         .compact-row .leader-photo {
@@ -895,7 +923,7 @@
             <!-- Row 2: Chairman & Guest of Honour -->
             <div class="leadership-row">
                 <article class="leader-card">
-                    <div class="leader-badge">Chairman</div>
+                    <div class="leader-badge badge-chairman">Chairman</div>
                         <img src="images/chairman.jpg" alt="Prof. Rakesh Kumar" class="leader-photo">
                     <h3 class="leader-name">Rakesh Kumar</h3>
                     <p class="leader-role">Professor & Head</p>
@@ -907,7 +935,7 @@
                 </article>
 
                 <article class="leader-card">
-                    <div class="leader-badge">Guest of Honour</div>
+                    <div class="leader-badge badge-guest">Guest of Honour</div>
                     <img src="images/speaker-satish-singh.png" alt="Prof. Satish Kumar Singh" class="leader-photo">
                     <h3 class="leader-name">Prof. Satish Kumar Singh</h3>
                     <p class="leader-role">Professor, IIIT Allahabad</p>
@@ -920,20 +948,20 @@
 
             <!-- Row 3: Convener & Coordinators -->
             <div class="leadership-row compact-row" style="margin-top: 2.5rem;">
-                <article class="leader-card">
-                    <div class="leader-badge">Convener</div>
-                    <img src="images/convener.jpg" alt="Satya Prakash Yadav" class="leader-photo">
+                <article class="leader-card convener-card">
+                    <div class="leader-badge badge-convener">Convener</div>
+                    <img src="images/convener.jpg" alt="Satya Prakash Yadav" class="leader-photo leader-photo-compact">
                     <h3 class="leader-name">Satya Prakash Yadav</h3>
                     <p class="leader-role">Associate Professor & Convener</p>
                     <ul class="leader-details">
                         <li><strong>Qualification:</strong> PhD</li>
                         <li><strong>Area of Interest:</strong> Machine Learning, Deep Learning, Artificial Intelligence, Explainable AI.</li>
-                        <li><strong>Email:</strong> satya@mmmut.ac.in</li>
+                        <li><strong>Email:</strong> spycs@mmmut.ac.in</li>
                     </ul>
                 </article>
 
                 <article class="leader-card">
-                    <div class="leader-badge">Programme Coordinator</div>
+                    <div class="leader-badge badge-coordinator">Programme Coordinator</div>
                     <img src="images/coordinator-sumit.jpeg" alt="Dr. Sumit Kumar" class="leader-photo">
                     <h3 class="leader-name">Dr. Sumit Kumar</h3>
                     <p class="leader-role">Assistant Professor, CSE</p>
@@ -945,7 +973,7 @@
                 </article>
 
                 <article class="leader-card">
-                    <div class="leader-badge">Programme Coordinator</div>
+                    <div class="leader-badge badge-coordinator">Programme Coordinator</div>
                     <img src="images/coordinator-pradeep.jpg" alt="Dr. Pradeep Kumar Singh" class="leader-photo">
                     <h3 class="leader-name">Dr. Pradeep Kumar Singh</h3>
                     <p class="leader-role">Assistant Professor, CSE</p>
@@ -956,7 +984,7 @@
                 </article>
 
                 <article class="leader-card">
-                    <div class="leader-badge">Programme Coordinator</div>
+                    <div class="leader-badge badge-coordinator">Programme Coordinator</div>
                     <img src="images/coordinator-pawan.jpeg" alt="Dr. Pawan Kumar Mall" class="leader-photo">
                     <h3 class="leader-name">Dr. Pawan Kumar Mall</h3>
                     <p class="leader-role">Assistant Professor, CSE</p>
