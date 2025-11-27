@@ -179,7 +179,7 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 6rem;
             font-weight: 500;
             margin-bottom: 1rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
@@ -735,6 +735,45 @@
             .section-title { font-size: 1.5rem; }
             .grid { gap: 1rem; }
         }
+
+        /* Hamburger Button */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+}
+
+/* Mobile Menu Hidden by default */
+.nav-links {
+    transition: max-height 0.4s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .nav-links.active {
+        max-height: 500px; /* enough height */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -756,6 +795,7 @@
                     <span class="logo-line">Process-centric and Reward-based </span>
                     <span class="logo-line">Interpretability Model with Explainable AI </span>
                 </a>
+                <button class="hamburger" onclick="toggleMenu()">☰</button>
                 <div style="width: 60px;"></div>
             </div>
         </div>
@@ -782,8 +822,8 @@
     <!-- Hero Section -->
     <div class="hero" id="carousel">
         <div class="hero-content">
-            <h1>FDP on<br>Process-centric and Reward-based<br>Interpretable Models in Explainable AI</h1>
-            <p>PRIMEAI-2025</p>
+            <h1>PRIME-AI 2025</h1>
+            <p></p>
             <a href="#registration" class="btn">Register Now →</a>
         </div>
     </div>
@@ -963,8 +1003,8 @@
                     </ul>
                 </article>
 
-                <article class="leader-card">
-                    <div class="leader-badge badge-coordinator">Programme Coordinator</div>
+                <article class="leader-card convener-card">
+                    <div class="leader-badge badge-convener">Convener</div>
                     <img src="images/coordinator-sumit.jpeg" alt="Dr. Sumit Kumar" class="leader-photo">
                     <h3 class="leader-name">Dr. Sumit Kumar</h3>
                     <p class="leader-role">Assistant Professor, CSE</p>
@@ -976,7 +1016,7 @@
                 </article>
 
                 <article class="leader-card">
-                    <div class="leader-badge badge-coordinator">Programme Coordinator</div>
+                    <div class="leader-badge badge-coordinator">Co-Convener</div>
                     <img src="images/coordinator-pradeep.jpg" alt="Dr. Pradeep Kumar Singh" class="leader-photo">
                     <h3 class="leader-name">Dr. Pradeep Kumar Singh</h3>
                     <p class="leader-role">Assistant Professor, CSE</p>
@@ -987,7 +1027,7 @@
                 </article>
 
                 <article class="leader-card">
-                    <div class="leader-badge badge-coordinator">Programme Coordinator</div>
+                    <div class="leader-badge badge-coordinator">Co-Convener</div>
                     <img src="images/coordinator-pawan.jpeg" alt="Dr. Pawan Kumar Mall" class="leader-photo">
                     <h3 class="leader-name">Dr. Pawan Kumar Mall</h3>
                     <p class="leader-role">Assistant Professor, CSE</p>
@@ -1084,5 +1124,12 @@
             <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">Web Developer: <strong>Priyanshu Chaurasia</strong></p>
         </div>
     </footer>
+
+    <script>
+    function toggleMenu() {
+        document.querySelector(".nav-links").classList.toggle("active");
+    }
+</script>
+
 </body>
 </html>

@@ -231,6 +231,159 @@
 
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
+
+        /* Leadership cards */
+        .leadership-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: stretch;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .leader-card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            padding: 2rem;
+            max-width: 420px;
+            width: 100%;
+            border-top: 5px solid #f57c00;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .leader-feature {
+            max-width: 640px;
+        }
+
+        .leader-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 5px solid rgba(245, 124, 0, 0.2);
+        }
+
+        .leader-photo-compact {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 1rem;
+        }
+
+        .leader-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 0.3rem;
+        }
+
+        .leader-role {
+            color: #f57c00;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leader-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .leader-details li {
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        .leader-badge {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 0.35rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .badge-chairman { background: #1e88e5;
+         }
+        .badge-guest { background: #26c6da; }
+        .badge-convener { background: #fb8c00; }
+        .badge-coordinator { background: #43a047; }
+
+        .leader-highlight {
+            border-top-color: #000000;
+            background: linear-gradient(180deg, #ffffff 0%, #fff7ef 100%);
+        }
+
+        .leader-card.convener-card {
+            max-width: 320px;
+            padding: 1.9rem;
+            border-top-color: #fb8c00;
+            background: linear-gradient(180deg, #fffdf6 0%, #fff3dd 100%);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .leader-card.convener-card .leader-photo {
+            border-color: rgba(251, 140, 0, 0.35);
+        }
+
+        .compact-row .leader-card {
+            max-width: 260px;
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .compact-row .leader-card.convener-card {
+            max-width: 320px;
+            padding: 1.9rem;
+            flex: 1.1;
+        }
+
+        .compact-row .leader-photo {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 1rem;
+        }
+
+        .compact-row .leader-name {
+            font-size: 1.1rem;
+        }
+
+        .compact-row .leader-role {
+            font-size: 0.95rem;
+        }
+
+        .highlight-card {
+            color: white;
+        }
+
+        .highlight-card.orange { background: #f57c00; }
+        .highlight-card.blue { background: #1565c0; }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card .value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0.5rem 0;
+        }
+
         footer {
             background: #000000;
             color: white;
@@ -432,126 +585,340 @@
         </div>
     </div>
 
-    <section class="section">
+    <!-- Faculty Leadership Section -->
+    <section class="section" style="background: #f9f9f9; padding: 4rem 0;">
         <div class="container">
-            <h2 class="section-title">Programme Leadership</h2>
-            <p class="section-subtitle">Guiding the success of FDP PRIMEAI-2025</p>
-            
-            <div class="grid grid-3" style="margin-top: 2rem;">
-                <div class="organizer-card green">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/patron.jpg" alt="Prof. Jay Prakash Saini" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover; border: 6px solid #4caf50;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%234caf50%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EJP%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-success">Patron</span>
-                    <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Prof. Jay Prakash Saini</h3>
-                    <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Hon'ble Vice Chancellor</p>
-                    <p style="color: #666;">MMMUT, Gorakhpur, India</p>
-                </div>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Programme Leadership</h2>
 
-                <div class="organizer-card blue">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/chairman.jpg" alt="Prof. Rakesh Kumar" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #2196f3;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%232196f3%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ERK%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-info">Chairman</span>
-                    <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Prof. Rakesh Kumar</h3>
-                    <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Head, Computer Science and Engineering Department</p>
-                    <p style="color: #666;">MMMUT, Gorakhpur, India</p>
-                </div>
-
-                <div class="organizer-card orange">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/convener.jpg" alt="Dr. Satya Prakash Yadav" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #f57c00;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESP%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-warning">Programme Convener</span>
-                    <h3 style="color: #d32f2f; font-weight: 700; margin-bottom: 0.5rem;">Dr. Satya Prakash Yadav</h3>
-                    <p style="color: #d32f2f; font-weight: 600; margin-bottom: 0.3rem;">Associate Professor</p>
-                    <p style="color: #666;">Computer Science and Engineering Department, MMMUT, Gorakhpur, India</p>
-                </div>
+            <!-- Row 1: Patron -->
+            <div class="leadership-row">
+                <article class="leader-card leader-feature leader-highlight">
+                    <img src="images/patron.jpg" alt="Jay Prakash Saini" class="leader-photo">
+                    <h3 class="leader-name">Jay Prakash Saini</h3>
+                    <p class="leader-role">Hon'ble Vice Chancellor & Patron</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
+                        <li><strong>Role:</strong> Chief Patron of FDP PRIMEAI-2025</li>
+                        <li><strong>Leadership:</strong> Guiding MMMUT's excellence in technical education and research.</li>
+                    </ul>
+                </article>
             </div>
 
-            <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: #f57c00; font-size: 1.5rem;">Programme Coordinators</h3>
-            <div class="grid grid-3">
-                <div class="organizer-card orange">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/coordinator-sumit.jpeg" alt="Dr. Sumit Kumar" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #f57c00;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESK%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-primary">Coordinator</span>
-                    <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.5rem;">Dr. Sumit Kumar</h3>
-                    <p style="color: #f57c00; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor, CSE</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">MMMUT, Gorakhpur</p>
-                    <p style="color: #666; font-size: 0.85rem;">📧 skcs@mmmut.ac.in</p>
-                    <p style="color: #666; font-size: 0.85rem;">📱 +91-8127710956</p>
-                </div>
+            <!-- Row 2: Chairman & Guest of Honour -->
+            <div class="leadership-row">
+                <article class="leader-card">
+                    <div class="leader-badge badge-chairman">Chairman</div>
+                        <img src="images/chairman.jpg" alt="Prof. Rakesh Kumar" class="leader-photo">
+                    <h3 class="leader-name">Rakesh Kumar</h3>
+                    <p class="leader-role">Professor & Head</p>
+                    <ul class="leader-details">
+                        <li><strong>Qualification:</strong> PhD/IIT Roorkee</li>
+                        <li><strong>Area of Interest:</strong> Mobile & Distributed Computing, IoT, Sensor Networks, Network Security, Machine Learning, Cloud Computing, Image Processing.</li>
+                        <li><strong>Email:</strong> rkiitr@gmail.com</li>
+                    </ul>
+                </article>
 
-                <div class="organizer-card orange">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/coordinator-pradeep.jpg" alt="Dr. Pradeep Kumar Singh" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #f57c00;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EPS%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-primary">Coordinator</span>
-                    <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.5rem;">Dr. Pradeep Kumar Singh</h3>
-                    <p style="color: #f57c00; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor, CSE</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">MMMUT, Gorakhpur</p>
-                    <p style="color: #666; font-size: 0.85rem;">📧 pkcse@mmmut.ac.in</p>
-                </div>
-
-                <div class="organizer-card orange">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/coordinator-pawan.jpeg" alt="Dr. Pawan Kumar Mall" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #f57c00;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2260%22 fill=%22%23f57c00%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2248%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EPM%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-primary">Coordinator</span>
-                    <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.5rem;">Dr. Pawan Kumar Mall</h3>
-                    <p style="color: #f57c00; font-weight: 600; margin-bottom: 0.3rem;">Assistant Professor, CSE</p>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">MMMUT, Gorakhpur</p>
-                    <p style="color: #666; font-size: 0.85rem;">📧 pkmcse@mmmut.ac.in</p>
-                </div>
+                <article class="leader-card">
+                    <div class="leader-badge badge-guest">Guest of Honour</div>
+                    <img src="images/speaker-satish-singh.png" alt="Prof. Satish Kumar Singh" class="leader-photo">
+                    <h3 class="leader-name">Prof. Satish Kumar Singh</h3>
+                    <p class="leader-role">Professor, IIIT Allahabad</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> IIIT Allahabad</li>
+                        <li><strong>Expertise:</strong> ML Foundations, Deep Learning, Explainable AI.</li>
+                    </ul>
+                </article>
             </div>
 
-            <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: #ff6f00; font-size: 1.5rem;">Programme Co-Coordinators</h3>
-            <div class="grid grid-3">
-                <div class="organizer-card blue">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/co-coordinator-shailesh.jpg" alt="Dr. Shailesh Kumar" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESK%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-secondary">Co-Coordinator</span>
-                    <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Shailesh Kumar</h3>
-                    <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
-                </div>
+            <!-- Row 3: Convener & Coordinators -->
+            <div class="leadership-row compact-row" style="margin-top: 2.5rem;">
+                <article class="leader-card convener-card">
+                    <div class="leader-badge badge-convener">Convener</div>
+                    <img src="images/convener.jpg" alt="Satya Prakash Yadav" class="leader-photo leader-photo-compact">
+                    <h3 class="leader-name">Satya Prakash Yadav</h3>
+                    <p class="leader-role">Associate Professor & Convener</p>
+                    <ul class="leader-details">
+                        <li><strong>Qualification:</strong> PhD</li>
+                        <li><strong>Area of Interest:</strong> Machine Learning, Deep Learning, Artificial Intelligence, Explainable AI.</li>
+                        <li><strong>Email:</strong> spycs@mmmut.ac.in</li>
+                    </ul>
+                </article>
 
-                <div class="organizer-card blue">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/co-coordinator-shwet.jpeg" alt="Dr. Shwet Ketu" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESK%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-secondary">Co-Coordinator</span>
-                    <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Shwet Ketu</h3>
-                    <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
-                </div>
+                <article class="leader-card convener-card">
+                    <div class="leader-badge badge-convener">Convener</div>
+                    <img src="images/coordinator-sumit.jpeg" alt="Dr. Sumit Kumar" class="leader-photo">
+                    <h3 class="leader-name">Dr. Sumit Kumar</h3>
+                    <p class="leader-role">Assistant Professor, CSE</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
+                        <li>📧 skcs@mmmut.ac.in</li>
+                        <li>📱 +91-8127710956</li>
+                    </ul>
+                </article>
 
-                <div class="organizer-card blue">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/co-coordinator-vipul.jpg" alt="Dr. Vipul Narayan" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EVN%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-secondary">Co-Coordinator</span>
-                    <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Vipul Narayan</h3>
-                    <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
-                </div>
+                <article class="leader-card">
+                    <div class="leader-badge badge-coordinator">Co-Convener</div>
+                    <img src="images/coordinator-pradeep.jpg" alt="Dr. Pradeep Kumar Singh" class="leader-photo">
+                    <h3 class="leader-name">Dr. Pradeep Kumar Singh</h3>
+                    <p class="leader-role">Assistant Professor, CSE</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
+                        <li>📧 pkcse@mmmut.ac.in</li>
+                    </ul>
+                </article>
 
-                <div class="organizer-card blue">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/co-coordinator-anu.jpg" alt="Dr. Anu Raj" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3EAR%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-secondary">Co-Coordinator</span>
-                    <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Anu Raj</h3>
-                    <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
-                </div>
+                <article class="leader-card">
+                    <div class="leader-badge badge-coordinator">Co-Convener</div>
+                    <img src="images/coordinator-pawan.jpeg" alt="Dr. Pawan Kumar Mall" class="leader-photo">
+                    <h3 class="leader-name">Dr. Pawan Kumar Mall</h3>
+                    <p class="leader-role">Assistant Professor, CSE</p>
+                    <ul class="leader-details">
+                        <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
+                        <li>📧 pkmcse@mmmut.ac.in</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
 
-                <div class="organizer-card blue">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <img src="images/co-coordinator-swapnita.jpg" alt="Dr. Swapnita Srivastava" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #000000;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23000000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22%3ESS%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <span class="badge badge-secondary">Co-Coordinator</span>
-                    <h3 style="color: #000000; font-weight: 700; margin-bottom: 0.3rem; font-size: 1.1rem;">Dr. Swapnita Srivastava</h3>
-                    <p style="color: #666; font-size: 0.9rem;">CSE Dept., MMMUT</p>
-                </div>
+    <!-- Committees Section -->
+    <section class="section" style="padding: 4rem 0;">
+        <div class="container">
+            <!-- Invitation and Registration Committee -->
+            <h2 class="section-title" style="margin-top: 0;">Invitation and Registration Committee</h2>
+            <div style="overflow-x: auto; margin-bottom: 3rem;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #f57c00; color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">S.No</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Name</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Position</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">1.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Sumit Kumar</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;"><span class="badge badge-primary">Convener</span></td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">2.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Sailesh Kumar</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">3.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Satya Prakash Maurya</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">4.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Vimal Kumar</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Stage and Inaugural Committee -->
+            <h2 class="section-title">Stage and Inaugural Committee</h2>
+            <div style="overflow-x: auto; margin-bottom: 3rem;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #f57c00; color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">S.No</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Name</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Position</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">1.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Satya Prakash Yadav</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;"><span class="badge badge-primary">Convener</span></td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">2.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Shwet Ketu</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">3.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Santanu Shahi</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">4.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Pawan Kumar Mall</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Transportation Committee and T.A./D.A. -->
+            <h2 class="section-title">Transportation Committee and T.A./D.A.</h2>
+            <div style="overflow-x: auto; margin-bottom: 3rem;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #f57c00; color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">S.No</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Name</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Position</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">1.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Pawan Kumar Mall</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;"><span class="badge badge-primary">Convener</span></td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">2.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Vipul Narayan</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">3.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Swapnita Srivastava</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">4.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Anu Raj</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Hospitality Committee -->
+            <h2 class="section-title">Hospitality Committee</h2>
+            <div style="overflow-x: auto; margin-bottom: 3rem;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #f57c00; color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">S.No</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Name</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Position</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">1.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Pradeep Kumar Singh</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;"><span class="badge badge-primary">Convener</span></td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">2.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Sumit Kumar</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">3.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Pawan Kumar Mall</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Session Management Committee -->
+            <h2 class="section-title">Session Management Committee</h2>
+            <div style="overflow-x: auto; margin-bottom: 3rem;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #f57c00; color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">S.No</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Name</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Position</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">1.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Sumit Kumar</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;"><span class="badge badge-primary">Convener</span></td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">2.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Shwet Ketu</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">3.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Swapnita Srivastava</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">4.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Anu Raj</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Print and Media Committee -->
+            <h2 class="section-title">Print and Media Committee</h2>
+            <div style="overflow-x: auto; margin-bottom: 3rem;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #f57c00; color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">S.No</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Name</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Position</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">1.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Pawan Kumar Mall</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;"><span class="badge badge-primary">Convener</span></td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">2.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Vipul Narayan</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">3.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Avanesh Kumar</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Website Management -->
+            <h2 class="section-title">Website Management</h2>
+            <div style="overflow-x: auto; margin-bottom: 3rem;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #f57c00; color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">S.No</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Name</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd; font-weight: 600;">Position</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">1.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Rohit Tiwari</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;"><span class="badge badge-primary">Convener</span></td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd; background: #f9f9f9;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">2.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Dr. Pawan Kumar Mall</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Member</td>
+                        </tr>
+                        <tr style="border: 1px solid #ddd;">
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">3.</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;">Priyanshu Chaurasia</td>
+                            <td style="padding: 0.8rem; border: 1px solid #ddd;"><span style="background: #666; color: white; padding: 0.3rem 0.6rem; border-radius: 12px; font-weight: 600; font-size: 0.85rem;">Student Member</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -570,6 +937,7 @@
             </p>
             <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">Web Developer: <strong>Priyanshu Chaurasia</strong></p>
         </div>
+    
     </footer>
 </body>
 </html>
