@@ -953,7 +953,7 @@
             <div class="leadership-row">
                 <article class="leader-card leader-feature leader-highlight">
                     <img src="images/patron.jpg" alt="Jay Prakash Saini" class="leader-photo">
-                    <h3 class="leader-name">Jay Prakash Saini</h3>
+                    <h3 class="leader-name">Prof. J.P Saini</h3>
                     <p class="leader-role">Hon'ble Vice Chancellor & Patron</p>
                     <ul class="leader-details">
                         <li><strong>Institution:</strong> MMMUT Gorakhpur</li>
@@ -968,7 +968,7 @@
                 <article class="leader-card">
                     <div class="leader-badge badge-chairman">Chairman</div>
                         <img src="images/chairman.jpg" alt="Prof. Rakesh Kumar" class="leader-photo">
-                    <h3 class="leader-name">Rakesh Kumar</h3>
+                    <h3 class="leader-name">Dr. Rakesh Kumar</h3>
                     <p class="leader-role">Professor & Head</p>
                     <ul class="leader-details">
                         <li><strong>Qualification:</strong> PhD/IIT Roorkee</li>
@@ -1101,7 +1101,7 @@
                     <p style="font-size: 1.1rem;">💵 ₹1000 - Offline External Candidates</p>
                 </div>
                 <div>
-                    <a href="#" class="btn btn-secondary" onclick="alert('Registration link will be updated soon'); return false;">Register Now →</a>
+                    <a href="https://mmmut.samarth.edu.in/feeportal/index.php/fee/fee-payment-miscellaneous/register" class="btn btn-secondary" target="_blank" rel="noopener" onclick="showRegistrationPopup()">Register Now →</a>
                     <a href="schedule.html" class="btn btn-outline">View Schedule</a>
                 </div>
             </div>
@@ -1128,6 +1128,32 @@
     <script>
     function toggleMenu() {
         document.querySelector(".nav-links").classList.toggle("active");
+    }
+
+    // Registration popup
+    function showRegistrationPopup() {
+        // Create popup container
+        var popup = document.createElement('div');
+        popup.innerText = 'Registrations are ON!';
+        popup.style.position = 'fixed';
+        popup.style.bottom = '40px';
+        popup.style.right = '40px';
+        popup.style.background = '#f57c00';
+        popup.style.color = 'white';
+        popup.style.padding = '1rem 2rem';
+        popup.style.borderRadius = '12px';
+        popup.style.fontWeight = '600';
+        popup.style.fontSize = '1.1rem';
+        popup.style.boxShadow = '0 8px 24px rgba(245,124,0,0.2)';
+        popup.style.zIndex = '9999';
+        popup.style.opacity = '0';
+        popup.style.transition = 'opacity 0.4s';
+        document.body.appendChild(popup);
+        setTimeout(function() { popup.style.opacity = '1'; }, 50);
+        setTimeout(function() {
+            popup.style.opacity = '0';
+            setTimeout(function() { document.body.removeChild(popup); }, 400);
+        }, 1800);
     }
 </script>
 
